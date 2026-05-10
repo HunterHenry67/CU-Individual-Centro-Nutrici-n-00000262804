@@ -31,8 +31,8 @@ public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         lblTitulo7 = new javax.swing.JLabel();
         lblTitulo6 = new javax.swing.JLabel();
-        btnAgregarCenaComida = new javax.swing.JButton();
-        btnEliminarCenaComida = new javax.swing.JButton();
+        btnAgregarComida = new javax.swing.JButton();
+        btnBuscarAlimento = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaCena = new javax.swing.JTable();
 
@@ -54,18 +54,18 @@ public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
         lblTitulo6.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
         lblTitulo6.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnAgregarCenaComida.setBackground(new java.awt.Color(255, 0, 0));
-        btnAgregarCenaComida.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnAgregarCenaComida.setText("Agregar");
-        btnAgregarCenaComida.setBorder(null);
+        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 0));
+        btnAgregarComida.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnAgregarComida.setText("Agregar");
+        btnAgregarComida.setBorder(null);
 
-        btnEliminarCenaComida.setBackground(new java.awt.Color(255, 0, 0));
-        btnEliminarCenaComida.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnEliminarCenaComida.setText("Buscar Alimento");
-        btnEliminarCenaComida.setBorder(null);
-        btnEliminarCenaComida.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarAlimento.setBackground(new java.awt.Color(255, 0, 0));
+        btnBuscarAlimento.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnBuscarAlimento.setText("Buscar Alimento");
+        btnBuscarAlimento.setBorder(null);
+        btnBuscarAlimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarCenaComidaActionPerformed(evt);
+                btnBuscarAlimentoActionPerformed(evt);
             }
         });
 
@@ -97,13 +97,13 @@ public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnAgregarCenaComida, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregarComida, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(btnEliminarCenaComida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBuscarAlimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(73, 73, 73))
         );
         jPanel3Layout.setVerticalGroup(
@@ -123,10 +123,10 @@ public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                        .addComponent(btnAgregarCenaComida, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAgregarComida, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnEliminarCenaComida, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscarAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -144,9 +144,9 @@ public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEliminarCenaComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCenaComidaActionPerformed
+    private void btnBuscarAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAlimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarCenaComidaActionPerformed
+    }//GEN-LAST:event_btnBuscarAlimentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,8 +184,8 @@ public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarCenaComida;
-    private javax.swing.JButton btnEliminarCenaComida;
+    private javax.swing.JButton btnAgregarComida;
+    private javax.swing.JButton btnBuscarAlimento;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane4;

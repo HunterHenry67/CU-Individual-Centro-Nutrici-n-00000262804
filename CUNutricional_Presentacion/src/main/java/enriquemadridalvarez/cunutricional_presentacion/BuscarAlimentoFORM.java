@@ -30,11 +30,11 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         lblTitulo7 = new javax.swing.JLabel();
         lblTitulo6 = new javax.swing.JLabel();
-        btnAgregarCenaComida = new javax.swing.JButton();
+        btnAgregarComida = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaCena = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
+        txtFieldBuscarAlimento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,10 +52,10 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
         lblTitulo6.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
         lblTitulo6.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnAgregarCenaComida.setBackground(new java.awt.Color(255, 0, 0));
-        btnAgregarCenaComida.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnAgregarCenaComida.setText("Agregar");
-        btnAgregarCenaComida.setBorder(null);
+        btnAgregarComida.setBackground(new java.awt.Color(255, 0, 0));
+        btnAgregarComida.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnAgregarComida.setText("Agregar");
+        btnAgregarComida.setBorder(null);
 
         tablaCena.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,9 +70,12 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tablaCena);
 
-        jButton1.setText("jButton1");
-
-        jTextField1.setText("jTextField1");
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -88,16 +91,16 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(97, 97, 97)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFieldBuscarAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(194, 194, 194)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnAgregarCenaComida, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregarComida, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
         );
         jPanel3Layout.setVerticalGroup(
@@ -114,12 +117,12 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(txtFieldBuscarAlimento))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAgregarCenaComida, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAgregarComida, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
 
@@ -136,6 +139,10 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,14 +180,14 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarCenaComida;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAgregarComida;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblTitulo6;
     private javax.swing.JLabel lblTitulo7;
     private javax.swing.JTable tablaCena;
+    private javax.swing.JTextField txtFieldBuscarAlimento;
     // End of variables declaration//GEN-END:variables
 }
