@@ -29,8 +29,8 @@ public class MenuCentroNutricionFORM extends javax.swing.JFrame {
         jPanel = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         lblTitulo = new javax.swing.JLabel();
-        btnAccesoConsultaDietas = new javax.swing.JButton();
-        btnAccesoRegistroNutricional = new javax.swing.JButton();
+        btnMostrarDietasPacientes = new javax.swing.JButton();
+        btnMostrarNuevosPacientes = new javax.swing.JButton();
         lblTitulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,27 +43,27 @@ public class MenuCentroNutricionFORM extends javax.swing.JFrame {
         lblTitulo.setBackground(new java.awt.Color(255, 255, 255));
         lblTitulo.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("Menu Centro Nutricional");
+        lblTitulo.setText("Menu Centro de Nutrición");
 
-        btnAccesoConsultaDietas.setBackground(new java.awt.Color(255, 0, 0));
-        btnAccesoConsultaDietas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        btnAccesoConsultaDietas.setForeground(new java.awt.Color(255, 255, 255));
-        btnAccesoConsultaDietas.setText("Consulta Dietas");
-        btnAccesoConsultaDietas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnAccesoConsultaDietas.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarDietasPacientes.setBackground(new java.awt.Color(255, 0, 0));
+        btnMostrarDietasPacientes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnMostrarDietasPacientes.setForeground(new java.awt.Color(255, 255, 255));
+        btnMostrarDietasPacientes.setText("Mostrar Dietas Pacientes");
+        btnMostrarDietasPacientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnMostrarDietasPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccesoConsultaDietasActionPerformed(evt);
+                btnMostrarDietasPacientesActionPerformed(evt);
             }
         });
 
-        btnAccesoRegistroNutricional.setBackground(new java.awt.Color(255, 0, 0));
-        btnAccesoRegistroNutricional.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        btnAccesoRegistroNutricional.setForeground(new java.awt.Color(255, 255, 255));
-        btnAccesoRegistroNutricional.setText("Registro Nutricional");
-        btnAccesoRegistroNutricional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnAccesoRegistroNutricional.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarNuevosPacientes.setBackground(new java.awt.Color(255, 0, 0));
+        btnMostrarNuevosPacientes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnMostrarNuevosPacientes.setForeground(new java.awt.Color(255, 255, 255));
+        btnMostrarNuevosPacientes.setText("Mostrar Nuevos Pacientes");
+        btnMostrarNuevosPacientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnMostrarNuevosPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccesoRegistroNutricionalActionPerformed(evt);
+                btnMostrarNuevosPacientesActionPerformed(evt);
             }
         });
 
@@ -76,37 +76,33 @@ public class MenuCentroNutricionFORM extends javax.swing.JFrame {
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
-                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblTitulo)
-                        .addGap(181, 181, 181)
-                        .addComponent(lblTitulo1))
-                    .addGroup(jPanelLayout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 792, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanelLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(btnAccesoRegistroNutricional, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAccesoConsultaDietas, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93)))
+                .addContainerGap(196, Short.MAX_VALUE)
+                .addComponent(lblTitulo)
+                .addGap(155, 155, 155)
+                .addComponent(lblTitulo1)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnMostrarDietasPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMostrarNuevosPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE))
+                .addGap(242, 242, 242))
+            .addComponent(jSeparator1)
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAccesoRegistroNutricional, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAccesoConsultaDietas, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(btnMostrarNuevosPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(btnMostrarDietasPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,13 +123,13 @@ public class MenuCentroNutricionFORM extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAccesoConsultaDietasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccesoConsultaDietasActionPerformed
+    private void btnMostrarDietasPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarDietasPacientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAccesoConsultaDietasActionPerformed
+    }//GEN-LAST:event_btnMostrarDietasPacientesActionPerformed
 
-    private void btnAccesoRegistroNutricionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccesoRegistroNutricionalActionPerformed
+    private void btnMostrarNuevosPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarNuevosPacientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAccesoRegistroNutricionalActionPerformed
+    }//GEN-LAST:event_btnMostrarNuevosPacientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,8 +167,8 @@ public class MenuCentroNutricionFORM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAccesoConsultaDietas;
-    private javax.swing.JButton btnAccesoRegistroNutricional;
+    private javax.swing.JButton btnMostrarDietasPacientes;
+    private javax.swing.JButton btnMostrarNuevosPacientes;
     private javax.swing.JPanel jPanel;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblTitulo;
