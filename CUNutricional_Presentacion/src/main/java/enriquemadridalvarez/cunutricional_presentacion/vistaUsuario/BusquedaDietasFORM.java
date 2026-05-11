@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package enriquemadridalvarez.cunutricional_presentacion;
+package enriquemadridalvarez.cunutricional_presentacion.vistaUsuario;
 
 /**
  *
  * @author BALAMRUSH
  */
-public class BusquedaAlergiasFORM extends javax.swing.JFrame {
+public class BusquedaDietasFORM extends javax.swing.JFrame {
 
     /**
-     * Creates new form BusquedaAlergiasFORM
+     * Creates new form BusquedaDietasFORM
      */
-    public BusquedaAlergiasFORM() {
+    public BusquedaDietasFORM() {
         initComponents();
     }
 
@@ -31,10 +31,10 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
         lblTitulo7 = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
         lblTitulo6 = new javax.swing.JLabel();
-        txtFieldAlergia = new javax.swing.JTextField();
+        txtFieldDietas = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        tablaAlergias = new javax.swing.JTable();
+        tablaDietas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,7 +46,7 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
         lblTitulo7.setBackground(new java.awt.Color(255, 255, 255));
         lblTitulo7.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
         lblTitulo7.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo7.setText("Búsqueda Alergias");
+        lblTitulo7.setText("Mis Dietas");
 
         btnAgregar.setBackground(new java.awt.Color(255, 0, 0));
         btnAgregar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -65,7 +65,7 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
 
         btnBuscar.setText("Buscar");
 
-        tablaAlergias.setModel(new javax.swing.table.DefaultTableModel(
+        tablaDietas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -76,25 +76,12 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
                 "Title 1", "Title 2"
             }
         ));
-        jScrollPane5.setViewportView(tablaAlergias);
+        jScrollPane5.setViewportView(tablaDietas);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblTitulo7)
-                        .addGap(204, 204, 204)
-                        .addComponent(lblTitulo6)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -102,14 +89,26 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(txtFieldAlergia, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(106, Short.MAX_VALUE))
+                        .addComponent(txtFieldDietas, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(96, Short.MAX_VALUE))
+            .addComponent(jSeparator4)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblTitulo7)
+                        .addGap(269, 269, 269)
+                        .addComponent(lblTitulo6)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTitulo7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTitulo6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -117,7 +116,7 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFieldAlergia, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFieldDietas, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
@@ -129,9 +128,11 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,20 +167,20 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BusquedaAlergiasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaDietasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BusquedaAlergiasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaDietasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BusquedaAlergiasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaDietasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BusquedaAlergiasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaDietasFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BusquedaAlergiasFORM().setVisible(true);
+                new BusquedaDietasFORM().setVisible(true);
             }
         });
     }
@@ -192,7 +193,7 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblTitulo6;
     private javax.swing.JLabel lblTitulo7;
-    private javax.swing.JTable tablaAlergias;
-    private javax.swing.JTextField txtFieldAlergia;
+    private javax.swing.JTable tablaDietas;
+    private javax.swing.JTextField txtFieldDietas;
     // End of variables declaration//GEN-END:variables
 }
