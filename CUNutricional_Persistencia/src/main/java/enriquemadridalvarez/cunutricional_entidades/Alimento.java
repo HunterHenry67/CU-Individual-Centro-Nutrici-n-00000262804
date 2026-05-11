@@ -10,4 +10,47 @@ package enriquemadridalvarez.cunutricional_entidades;
  */
 public class Alimento {
     
+    private String idAlimento;
+    private String nombreAlimento; 
+    private Float cantidad;
+
+    public Alimento() {
+    }
+
+    public Alimento(String idAlimento, String nombreAlimento, Float cantidad) {
+        this.idAlimento = idAlimento;
+        this.nombreAlimento = nombreAlimento;
+        this.cantidad = cantidad;
+    }
+
+    public Alimento(String nombreAlimento, Float cantidad) {
+        this.nombreAlimento = nombreAlimento;
+        this.cantidad = cantidad;
+    }
+
+    public String getIdAlimento() {
+        return idAlimento;
+    }
+
+    public void setIdAlimento(String idAlimento) {
+        this.idAlimento = idAlimento;
+    }
+
+    public String getNombreAlimento() {
+        return nombreAlimento;
+    }
+
+    public void setNombreAlimento(String nombreAlimento) {
+        this.nombreAlimento = nombreAlimento;
+    }
+
+    public Float getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Float cantidad) {
+        this.cantidad = cantidad;
+    }
+    
+    
 }
