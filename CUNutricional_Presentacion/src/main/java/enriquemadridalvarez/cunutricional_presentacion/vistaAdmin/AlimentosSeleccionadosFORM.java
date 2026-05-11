@@ -8,12 +8,12 @@ package enriquemadridalvarez.cunutricional_presentacion.vistaAdmin;
  *
  * @author BALAMRUSH
  */
-public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
+public class AlimentosSeleccionadosFORM extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AliementosSeleccionadosFORM
-     */
-    public AliementosSeleccionadosFORM() {
+    private ControlAdministrador controlAdmin;
+    
+    public AlimentosSeleccionadosFORM(ControlAdministrador controlAdmin) {
+        this.controlAdmin = new ControlAdministrador();
         initComponents();
     }
 
@@ -165,22 +165,19 @@ public class AliementosSeleccionadosFORM extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AliementosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlimentosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AliementosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlimentosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AliementosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlimentosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AliementosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlimentosSeleccionadosFORM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AliementosSeleccionadosFORM().setVisible(true);
-            }
-        });
+     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
