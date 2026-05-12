@@ -4,7 +4,13 @@
  */
 package enriquemadridalvarez.cucentronutricional;
 
+import com.mycompany.fitlifegym_dtos.AlergiaDTO;
+import com.mycompany.fitlifegym_dtos.AlimentoDTO;
+import com.mycompany.fitlifegym_dtos.DatosBiologicosDTO;
+import com.mycompany.fitlifegym_dtos.EstiloVidaDTO;
 import com.mycompany.fitlifegym_dtos.PacienteDTO;
+import com.mycompany.fitlifegym_dtos.PadecimientoDTO;
+import com.mycompany.fitlifegym_dtos.UnidadMedidaDTO;
 import com.mycompany.fitlifegym_negocio.NegocioException;
 import java.util.List;
 
@@ -24,4 +30,10 @@ public interface ICUCentroNutricional {
     public abstract boolean validarDiaSemana() throws NegocioException;
     public abstract boolean validarRegistroDieta() throws NegocioException;
     public abstract List<PacienteDTO> consultarPaciente() throws NegocioException;
+    public abstract List<EstiloVidaDTO> consultarEstiloVida() throws NegocioException;
+    public abstract List<DatosBiologicosDTO> consultarDatosBiologicos() throws NegocioException;
+    public abstract List<AlergiaDTO> consultarAlergia() throws NegocioException;
+    public abstract List<AlimentoDTO> consultarAlimento() throws NegocioException;
+    public abstract List<UnidadMedidaDTO> consultarUnidadMedida() throws NegocioException;
+    public abstract List<PadecimientoDTO> consultarPadecimiento() throws NegocioException;
 }
