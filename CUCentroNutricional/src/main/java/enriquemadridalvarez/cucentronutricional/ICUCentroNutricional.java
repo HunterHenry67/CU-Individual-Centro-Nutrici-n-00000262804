@@ -4,7 +4,8 @@
  */
 package enriquemadridalvarez.cucentronutricional;
 
-import enriquemadridalvarez.cunutricional_negocio.NegocioException;
+import com.mycompany.fitlifegym_dtos.PacienteDTO;
+import com.mycompany.fitlifegym_negocio.NegocioException;
 import java.util.List;
 
 /**
