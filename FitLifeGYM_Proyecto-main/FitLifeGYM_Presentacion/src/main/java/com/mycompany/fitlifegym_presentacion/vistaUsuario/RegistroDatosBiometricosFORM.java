@@ -15,7 +15,7 @@ public class RegistroDatosBiometricosFORM extends javax.swing.JFrame {
     private ControlUsuario controlUsuario;
     
     public RegistroDatosBiometricosFORM(ControlUsuario controlUsuario) {
-        this.controlUsuario = new ControlUsuario();
+        this.controlUsuario = ControlUsuario.getInstance();
         initComponents();
     }
 

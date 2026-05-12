@@ -4,10 +4,46 @@
  */
 package com.mycompany.fitlifegym_presentacion.vistaUsuario;
 
+
+import com.mycompany.fitlifegym_dtos.AlergiaDTO;
+import com.mycompany.fitlifegym_dtos.EstiloVidaDTO;
+import com.mycompany.fitlifegym_dtos.PadecimientoDTO;
+import com.mycompany.fitlifegym_negocio.NegocioException;
+import enriquemadridalvarez.cucentronutricional.ICUCentroNutricional;
+
 /**
  *
  * @author BALAMRUSH
  */
 public class ControlUsuario {
+    
+    private static ControlUsuario controlUsuarioInstancia;
+    
+    private ICUCentroNutricional fachadaCentroNutricional;
+    
+    private ControlUsuario(){      
+    }
+    
+    public static synchronized ControlUsuario getInstance(){
+        if(controlUsuarioInstancia == null){
+            controlUsuarioInstancia = new ControlUsuario();
+        }
+        return controlUsuarioInstancia;
+    }
+    
+    public boolean validarPadecimiento(PadecimientoDTO padecimiento)throws NegocioException{
+        return fachadaCentroNutricional.validarPadecimiento(padecimiento);
+    }
+    
+    public boolean validarAlergia(AlergiaDTO alergia) throws NegocioException{
+        return fachadaCentroNutricional.validarAlergia(alergia);
+    }
+    
+    public boolean validarEstiloVida(EstiloVidaDTO estiloVida) throws NegocioException{
+        return fachadaCentroNutricional.validarEstiloVida(estiloVida);
+    }
+    
+    
+    
     
 }

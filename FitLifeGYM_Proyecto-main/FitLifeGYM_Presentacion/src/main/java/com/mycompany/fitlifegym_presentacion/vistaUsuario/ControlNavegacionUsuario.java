@@ -17,7 +17,7 @@ public class ControlNavegacionUsuario {
     private ControlUsuario controlUsuario;
     
     public ControlNavegacionUsuario(){
-        this.controlUsuario = new ControlUsuario();
+        this.controlUsuario = ControlUsuario.getInstance();
     }
     
     public void mostrarBusquedaAlregiasFrom(){

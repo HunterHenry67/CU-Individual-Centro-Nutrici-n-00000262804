@@ -13,7 +13,7 @@ public class BusquedaAlergiasFORM extends javax.swing.JFrame {
     private ControlUsuario controlUsuario;
     
     public BusquedaAlergiasFORM(ControlUsuario controlUsuario) {
-        this.controlUsuario = new ControlUsuario();
+        this.controlUsuario = ControlUsuario.getInstance();
         initComponents();
     }
 

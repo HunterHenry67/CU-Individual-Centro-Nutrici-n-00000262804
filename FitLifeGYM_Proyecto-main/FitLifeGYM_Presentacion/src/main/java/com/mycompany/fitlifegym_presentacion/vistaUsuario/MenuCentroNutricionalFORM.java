@@ -15,7 +15,7 @@ public class MenuCentroNutricionalFORM extends javax.swing.JFrame {
     private ControlUsuario controlUsuario;
     
     public MenuCentroNutricionalFORM(ControlUsuario controlUsuario) {
-        this.controlUsuario = new ControlUsuario();
+        this.controlUsuario = ControlUsuario.getInstance();
         initComponents();
     }
 

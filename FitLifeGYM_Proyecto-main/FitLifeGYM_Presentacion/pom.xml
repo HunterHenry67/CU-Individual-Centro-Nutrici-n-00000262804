@@ -36,6 +36,11 @@
             <artifactId>FuncionalidadIniciarSesionRenovarMembresia</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>EnriqueMadridAlvarez</groupId>
+            <artifactId>CUCentroNutricional</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
