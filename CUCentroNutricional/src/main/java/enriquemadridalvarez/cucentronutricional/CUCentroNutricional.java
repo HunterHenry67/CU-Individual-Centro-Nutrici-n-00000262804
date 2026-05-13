@@ -13,6 +13,15 @@ import com.mycompany.fitlifegym_dtos.PacienteDTO;
 import com.mycompany.fitlifegym_dtos.PadecimientoDTO;
 import com.mycompany.fitlifegym_dtos.RegistroComidaDTO;
 import com.mycompany.fitlifegym_dtos.UnidadMedidaDTO;
+import com.mycompany.fitlifegym_negocio.IAlergiaBO;
+import com.mycompany.fitlifegym_negocio.IAlimentoBO;
+import com.mycompany.fitlifegym_negocio.IDatosBiologicosBO;
+import com.mycompany.fitlifegym_negocio.IDietaBO;
+import com.mycompany.fitlifegym_negocio.IEstiloVidaBO;
+import com.mycompany.fitlifegym_negocio.IPacienteBO;
+import com.mycompany.fitlifegym_negocio.IPadecimientoBO;
+import com.mycompany.fitlifegym_negocio.IRegistroDietaBO;
+import com.mycompany.fitlifegym_negocio.IUnidadMedidaBO;
 import com.mycompany.fitlifegym_negocio.NegocioException;
 import java.util.List;
 
@@ -21,10 +30,32 @@ import java.util.List;
  * @author BALAMRUSH
  */
 public class CUCentroNutricional implements ICUCentroNutricional{
+    
+    private IAlergiaBO alergiaBO;
+    private IAlimentoBO alimentoBO;
+    private IDatosBiologicosBO datosBiologicosBO;
+    private IDietaBO dietaBO;
+    private IEstiloVidaBO estiloVidaBO;
+    private IPadecimientoBO padecimientoBO;
+    private IPacienteBO pacienteBO;
+    private IRegistroDietaBO registroDietaBO;
+    private IUnidadMedidaBO unidadMedidaBo;
+
+    public CUCentroNutricional(IAlergiaBO alergiaBO, IAlimentoBO alimentoBO, IDatosBiologicosBO datosBiologicosBO, IDietaBO dietaBO, IEstiloVidaBO estiloVidaBO, IPadecimientoBO padecimientoBO, IPacienteBO pacienteBO, IRegistroDietaBO registroDietaBO, IUnidadMedidaBO unidadMedidaBo) {
+        this.alergiaBO = alergiaBO;
+        this.alimentoBO = alimentoBO;
+        this.datosBiologicosBO = datosBiologicosBO;
+        this.dietaBO = dietaBO;
+        this.estiloVidaBO = estiloVidaBO;
+        this.padecimientoBO = padecimientoBO;
+        this.pacienteBO = pacienteBO;
+        this.registroDietaBO = registroDietaBO;
+        this.unidadMedidaBo = unidadMedidaBo;
+    }
 
     @Override
     public boolean validarPacienteExistente(PacienteDTO paciente) throws NegocioException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 
     }
 
     @Override
