@@ -4,10 +4,16 @@
  */
 package com.mycompany.fitlifegym_persistencia;
 
+import com.mycompany.fitlifegym_persistencia.entidades.EstiloVida;
+import java.util.List;
+
 /**
  *
  * @author BALAMRUSH
  */
 public interface IEstiloVidaDAO {
-    
+    public abstract EstiloVida seleccionarEstiloVida(EstiloVida estiloVida) throws PersistenciaException;
+
+    public abstract List<EstiloVida> consultarEstiloVida(Long idEstiloVida) throws PersistenciaException;
+
 }

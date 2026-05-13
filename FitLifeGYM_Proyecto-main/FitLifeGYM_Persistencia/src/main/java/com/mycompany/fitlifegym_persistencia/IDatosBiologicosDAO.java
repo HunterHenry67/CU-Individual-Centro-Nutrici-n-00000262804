@@ -4,10 +4,15 @@
  */
 package com.mycompany.fitlifegym_persistencia;
 
+import com.mycompany.fitlifegym_persistencia.entidades.DatosBiologicos;
+import java.util.List;
+
 /**
  *
  * @author BALAMRUSH
  */
 public interface IDatosBiologicosDAO {
+    public abstract DatosBiologicos registrarDatosBiologicos(DatosBiologicos datosBiologicos) throws PersistenciaException;
     
+    public abstract List<DatosBiologicos> consultarDatosBiologicos(Long idPaciente) throws PersistenciaException;
 }

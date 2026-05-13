@@ -4,10 +4,17 @@
  */
 package com.mycompany.fitlifegym_persistencia;
 
+import com.mycompany.fitlifegym_persistencia.entidades.Padecimiento;
+import java.util.List;
+
 /**
  *
  * @author BALAMRUSH
  */
 public interface IPadecimientoDAO {
-    
+    public abstract Padecimiento agregarPadecimiento(Padecimiento padecimiento) throws PersistenciaException;
+
+    public abstract List<Padecimiento> consultarPadecimiento(Long idPadecimiento) throws PersistenciaException;
+
+    public abstract boolean eliminarPadecimiento(Long idPadecimiento) throws PersistenciaException;
 }
