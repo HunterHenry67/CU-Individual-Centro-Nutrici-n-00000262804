@@ -33,4 +33,5 @@
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.mycompany.funcionalidadiniciarsesionrenovarmembresia.FuncionalidadIniciarSesionRenovarMembresia</exec.mainClass>
     </properties>
+    <name>FISRenovarMembresia</name>
 </project>

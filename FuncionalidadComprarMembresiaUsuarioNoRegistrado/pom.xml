@@ -32,4 +32,5 @@
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.mycompany.funcionalidadcomprarmembresiausuarionoregistrado.FuncionalidadComprarMembresiaUsuarioNoRegistrado</exec.mainClass>
     </properties>
+    <name>ComprarMembresiaUNOR</name>
 </project>
