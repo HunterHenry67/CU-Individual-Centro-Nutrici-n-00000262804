@@ -15,7 +15,7 @@ public class RegistroEnfermedadesFORM extends javax.swing.JFrame {
     private ControlUsuario controlUsuario;
     
     public RegistroEnfermedadesFORM(ControlUsuario controlUsuario) {
-        this.controlUsuario = ControlUsuario.getInstance();
+        this.controlUsuario = controlUsuario;
         initComponents();
     }
 

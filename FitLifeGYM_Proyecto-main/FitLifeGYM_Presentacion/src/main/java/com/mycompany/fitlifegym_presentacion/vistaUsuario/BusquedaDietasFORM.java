@@ -14,7 +14,7 @@ public class BusquedaDietasFORM extends javax.swing.JFrame {
     private ControlUsuario controlUsuario;
     
     public BusquedaDietasFORM(ControlUsuario controlUsuario) {
-        this.controlUsuario = ControlUsuario.getInstance();
+        this.controlUsuario = controlUsuario;
         initComponents();
     }
 

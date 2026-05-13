@@ -13,7 +13,8 @@ public class BusquedaPadeciminetosFORM extends javax.swing.JFrame {
     private ControlUsuario controlUsuario;
     
     public BusquedaPadeciminetosFORM(ControlUsuario controlUsuario) {
-        this.controlUsuario = ControlUsuario.getInstance();
+        this.controlUsuario = controlUsuario;
+        initComponents();
     }
 
     /**

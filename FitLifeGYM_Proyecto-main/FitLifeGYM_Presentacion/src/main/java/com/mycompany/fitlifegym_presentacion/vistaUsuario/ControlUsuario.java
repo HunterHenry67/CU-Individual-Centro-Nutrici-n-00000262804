@@ -31,16 +31,8 @@ public class ControlUsuario {
         return controlUsuarioInstancia;
     }
     
-    public boolean validarPadecimiento(PadecimientoDTO padecimiento)throws NegocioException{
-        return fachadaCentroNutricional.validarPadecimiento(padecimiento);
-    }
-    
-    public boolean validarAlergia(AlergiaDTO alergia) throws NegocioException{
-        return fachadaCentroNutricional.validarAlergia(alergia);
-    }
-    
-    public boolean validarEstiloVida(EstiloVidaDTO estiloVida) throws NegocioException{
-        return fachadaCentroNutricional.validarEstiloVida(estiloVida);
+    public boolean eliminarPadecimiento(){
+        return fachadaCentroNutricional
     }
     
     
