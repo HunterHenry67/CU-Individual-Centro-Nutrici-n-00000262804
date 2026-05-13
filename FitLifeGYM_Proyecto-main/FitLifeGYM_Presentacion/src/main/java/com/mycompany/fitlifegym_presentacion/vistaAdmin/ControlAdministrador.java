@@ -4,10 +4,31 @@
  */
 package com.mycompany.fitlifegym_presentacion.vistaAdmin;
 
+import enriquemadridalvarez.cucentronutricional.ICUCentroNutricional;
+
 /**
  *
  * @author BALAMRUSH
  */
 public class ControlAdministrador {
     
+    private static ControlAdministrador controlAdminInstancia;
+    
+    private ICUCentroNutricional fachadaCentroNutricional;
+    
+    private ControlAdministrador(){
+        
+    }
+    
+    public static synchronized ControlAdministrador getInstance(){
+        if(controlAdminInstancia == null){
+            controlAdminInstancia = new ControlAdministrador();
+        }
+        return controlAdminInstancia;
+    }
+        
+    
+    
+        
+
 }

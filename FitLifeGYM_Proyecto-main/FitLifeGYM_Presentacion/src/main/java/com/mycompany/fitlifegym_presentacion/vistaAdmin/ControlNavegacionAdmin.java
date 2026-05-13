@@ -20,7 +20,7 @@ public class ControlNavegacionAdmin {
     private ControlAdministrador controlAdministrador;
     
     public ControlNavegacionAdmin(){
-        this.controlAdministrador = new ControlAdministrador();
+        this.controlAdministrador = ControlAdministrador.getInstance();
     }
     
     public void mostrarAlimentosSeleccionadosForm(){

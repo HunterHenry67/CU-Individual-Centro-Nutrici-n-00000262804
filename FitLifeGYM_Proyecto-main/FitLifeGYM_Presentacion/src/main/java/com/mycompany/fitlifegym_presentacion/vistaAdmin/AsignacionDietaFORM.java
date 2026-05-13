@@ -14,7 +14,7 @@ public class AsignacionDietaFORM extends javax.swing.JFrame {
     private ControlAdministrador controlAdmin;
     
     public AsignacionDietaFORM(ControlAdministrador controlAdmin) {
-        this.controlAdmin = new ControlAdministrador();
+        this.controlAdmin = controlAdmin;
         initComponents();
     }
 

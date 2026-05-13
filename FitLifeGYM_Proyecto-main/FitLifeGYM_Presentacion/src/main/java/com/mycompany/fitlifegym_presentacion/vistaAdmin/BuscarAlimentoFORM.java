@@ -14,7 +14,7 @@ public class BuscarAlimentoFORM extends javax.swing.JFrame {
     private ControlAdministrador controlAdmin;
     
     public BuscarAlimentoFORM(ControlAdministrador controlAdmin) {
-        this.controlAdmin = new ControlAdministrador();
+        this.controlAdmin = controlAdmin;
         initComponents();
     }
 

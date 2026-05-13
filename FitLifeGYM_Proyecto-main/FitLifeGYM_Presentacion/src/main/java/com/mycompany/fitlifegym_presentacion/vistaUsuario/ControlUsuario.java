@@ -31,10 +31,6 @@ public class ControlUsuario {
         return controlUsuarioInstancia;
     }
     
-    public boolean eliminarPadecimiento(){
-        return fachadaCentroNutricional
-    }
-    
     
     
     

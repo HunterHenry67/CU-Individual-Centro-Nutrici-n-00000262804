@@ -13,7 +13,7 @@ public class AlimentosSeleccionadosFORM extends javax.swing.JFrame {
     private ControlAdministrador controlAdmin;
     
     public AlimentosSeleccionadosFORM(ControlAdministrador controlAdmin) {
-        this.controlAdmin = new ControlAdministrador();
+        this.controlAdmin = controlAdmin;
         initComponents();
     }
 

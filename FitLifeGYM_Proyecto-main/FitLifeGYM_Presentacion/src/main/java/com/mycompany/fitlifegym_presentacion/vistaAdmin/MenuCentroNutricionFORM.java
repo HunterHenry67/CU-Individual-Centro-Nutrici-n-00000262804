@@ -15,7 +15,7 @@ public class MenuCentroNutricionFORM extends javax.swing.JFrame {
     private ControlAdministrador controlAdmin;
     
     public MenuCentroNutricionFORM(ControlAdministrador controlAdmin) {
-        this.controlAdmin = new ControlAdministrador();
+        this.controlAdmin = controlAdmin;
         initComponents();
     }
 

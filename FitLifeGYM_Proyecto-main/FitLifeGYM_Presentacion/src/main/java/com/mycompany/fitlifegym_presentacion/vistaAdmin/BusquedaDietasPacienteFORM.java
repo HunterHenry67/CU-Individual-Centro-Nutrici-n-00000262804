@@ -14,7 +14,7 @@ public class BusquedaDietasPacienteFORM extends javax.swing.JFrame {
     private ControlAdministrador controlAdmin;
     
     public BusquedaDietasPacienteFORM(ControlAdministrador controlAdmin) {
-        this.controlAdmin = new ControlAdministrador();
+        this.controlAdmin = controlAdmin;
         initComponents();
     }
 

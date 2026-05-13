@@ -15,7 +15,7 @@ public class RegistroDietaFORM extends javax.swing.JFrame {
     private ControlAdministrador controlAdmin;
     
     public RegistroDietaFORM(ControlAdministrador controlAdmin) {
-        this.controlAdmin = new ControlAdministrador();
+        this.controlAdmin = controlAdmin;
         initComponents();
     }
 

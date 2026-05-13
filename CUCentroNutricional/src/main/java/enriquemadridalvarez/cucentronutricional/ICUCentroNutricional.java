@@ -7,6 +7,7 @@ package enriquemadridalvarez.cucentronutricional;
 import com.mycompany.fitlifegym_dtos.AlergiaDTO;
 import com.mycompany.fitlifegym_dtos.AlimentoDTO;
 import com.mycompany.fitlifegym_dtos.DatosBiologicosDTO;
+import com.mycompany.fitlifegym_dtos.DietaDTO;
 import com.mycompany.fitlifegym_dtos.EstiloVidaDTO;
 import com.mycompany.fitlifegym_dtos.PacienteDTO;
 import com.mycompany.fitlifegym_dtos.PadecimientoDTO;
@@ -54,4 +55,33 @@ public interface ICUCentroNutricional {
     public abstract List<UnidadMedidaDTO> consultarUnidadMedida() throws NegocioException;
     
     public abstract List<PadecimientoDTO> consultarPadecimiento() throws NegocioException;
+    
+    public abstract boolean eliminarPaciente(PacienteDTO paciente) throws NegocioException;
+    
+    public abstract boolean eliminarPadecimiento(PadecimientoDTO padecimiento) throws NegocioException;
+    
+    public abstract boolean eliminarAlergia(AlergiaDTO alergia) throws NegocioException;
+    
+    public abstract PadecimientoDTO agregarPadecimiento(PadecimientoDTO padecimiento) throws NegocioException;
+    
+    public abstract DatosBiologicosDTO registrarDatosBiologicos(DatosBiologicosDTO datosBiologicos) throws NegocioException;
+    
+    public abstract EstiloVidaDTO seleccionarEstiloVida(EstiloVidaDTO estiloVida) throws NegocioException;
+    
+    public abstract AlergiaDTO agregarAlergia(AlergiaDTO alergia) throws NegocioException;
+    
+    public abstract AlimentoDTO agregarAlimento(AlimentoDTO alimento) throws NegocioException;
+    
+    public abstract Double agregarCantidad(Double cantidad) throws NegocioException;
+    
+    public abstract UnidadMedidaDTO agregarUnidadMedidaDTO(UnidadMedidaDTO unidadMedida) throws NegocioException;
+    
+    public abstract DietaDTO agregarRegistroDieta(DietaDTO dieta) throws NegocioException;
+    
+    public abstract DietaDTO busquedaDietaPacienteFiltro(DietaDTO dieta) throws NegocioException;
+    
+    public abstract DietaDTO busquedaDietaFiltro(DietaDTO dieta) throws NegocioException;
+    
+    
+    
 }
