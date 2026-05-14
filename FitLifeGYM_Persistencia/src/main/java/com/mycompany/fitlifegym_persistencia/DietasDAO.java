@@ -59,7 +59,12 @@ public class DietasDAO implements IDietaDAO{
 
     @Override
     public List<Dieta> buscarDietaFiltro(Long idDieta) throws PersistenciaException {
-        
+        try{
+            collectionDietas.find()
+        }catch(Exception ex){
+            LOGGER.severe(ex.getMessage());
+            throw new PersistenciaException("Error al buscar Dieta por Filtro: "+ex.getMessage());
+        }
     }
 
     
