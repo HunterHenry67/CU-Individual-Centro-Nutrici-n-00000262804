@@ -26,10 +26,9 @@ public class PersistenciaDAO implements IPersistenciaDAO{
     private IEstiloVidaDAO estiloVidaDAO;
     private IPacienteDAO pacienteDAO;
     private IPadecimientoDAO padecimientoDAO;
-    private IRegistroDietaDAO registroDietaDAO;
     private IUnidadMedidaDAO unidadMedidaDAO;
 
-    public PersistenciaDAO(IAlergiaDAO alergiaDAO, IAlimentoDAO alimentoDAO, IDatosBiologicosDAO datosBiologicosDAO, IDietaDAO dietasDAO, IEstiloVidaDAO estiloVidaDAO, IPacienteDAO pacienteDAO, IPadecimientoDAO padecimientoDAO, IRegistroDietaDAO registroDietaDAO, IUnidadMedidaDAO unidadMedidaDAO) {
+    public PersistenciaDAO(IAlergiaDAO alergiaDAO, IAlimentoDAO alimentoDAO, IDatosBiologicosDAO datosBiologicosDAO, IDietaDAO dietasDAO, IEstiloVidaDAO estiloVidaDAO, IPacienteDAO pacienteDAO, IPadecimientoDAO padecimientoDAO, IUnidadMedidaDAO unidadMedidaDAO) {
         this.alergiaDAO = alergiaDAO;
         this.alimentoDAO = alimentoDAO;
         this.datosBiologicosDAO = datosBiologicosDAO;
@@ -37,7 +36,6 @@ public class PersistenciaDAO implements IPersistenciaDAO{
         this.estiloVidaDAO = estiloVidaDAO;
         this.pacienteDAO = pacienteDAO;
         this.padecimientoDAO = padecimientoDAO;
-        this.registroDietaDAO = registroDietaDAO;
         this.unidadMedidaDAO = unidadMedidaDAO;
     }
 

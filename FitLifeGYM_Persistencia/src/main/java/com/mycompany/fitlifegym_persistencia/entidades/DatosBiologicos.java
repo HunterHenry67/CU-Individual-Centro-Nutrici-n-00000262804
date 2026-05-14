@@ -5,6 +5,7 @@
 package com.mycompany.fitlifegym_persistencia.entidades;
 
 import java.util.Date;
+import org.bson.codecs.pojo.annotations.BsonProperty;
 
 /**
  *
@@ -12,6 +13,7 @@ import java.util.Date;
  */
 public class DatosBiologicos {
     
+    @BsonProperty("_id")
     private String idDatosBiologicos;
     private Float peso;
     private Float altura;

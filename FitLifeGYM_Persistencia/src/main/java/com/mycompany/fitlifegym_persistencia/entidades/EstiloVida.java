@@ -4,12 +4,15 @@
  */
 package com.mycompany.fitlifegym_persistencia.entidades;
 
+import org.bson.codecs.pojo.annotations.BsonProperty;
+
 /**
  *
  * @author BALAMRUSH
  */
 public class EstiloVida {
     
+    @BsonProperty("_id")
     private String idEstiloVida;
     private String nombreEstiloVida;
     private String descripcion;

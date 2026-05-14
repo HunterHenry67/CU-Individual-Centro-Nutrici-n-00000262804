@@ -4,12 +4,15 @@
  */
 package com.mycompany.fitlifegym_persistencia.entidades;
 
+import org.bson.codecs.pojo.annotations.BsonProperty;
+
 /**
  *
  * @author BALAMRUSH
  */
 public class Alimento {
     
+    @BsonProperty("_id")
     private String idAlimento;
     private String nombreAlimento; 
     private Float cantidad;

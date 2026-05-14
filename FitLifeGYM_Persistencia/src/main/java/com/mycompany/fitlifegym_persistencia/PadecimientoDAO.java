@@ -12,12 +12,6 @@ import java.util.List;
  * @author Home
  */
 public class PadecimientoDAO implements IPadecimientoDAO{
-
-    @Override
-    public Padecimiento agregarPadecimiento(Padecimiento padecimiento) throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     @Override
     public List<Padecimiento> consultarPadecimiento(Long idPadecimiento) throws PersistenciaException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

@@ -14,11 +14,6 @@ import java.util.List;
 public class UnidadMedidaDAO implements IUnidadMedidaDAO{
 
     @Override
-    public UnidadMedida agregarUnidadMedida(UnidadMedida unidadMedida) throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
     public List<UnidadMedida> consultarUnidadMedida(Long idUnidadMedida) throws PersistenciaException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
