@@ -12,11 +12,11 @@ import java.util.List;
  * @author BALAMRUSH
  */
 public interface IDietaDAO {
-    public abstract Dieta agregarRegistroDieta(Dieta dieta) throws PersistenciaException;
-
     public abstract Dieta registrarDieta(Dieta dieta) throws PersistenciaException;
 
-    public abstract List<Dieta> busquedaDietaPacienteFiltro(Long idDieta) throws PersistenciaException;
+    public abstract Dieta consultarDietaPaciente(Long idPaciente) throws PersistenciaException;
+
+    public abstract List<Dieta> consultarDietas(Long idPaciente) throws PersistenciaException;
 
     public abstract List<Dieta> buscarDietaFiltro(Long idDieta) throws PersistenciaException;
 }

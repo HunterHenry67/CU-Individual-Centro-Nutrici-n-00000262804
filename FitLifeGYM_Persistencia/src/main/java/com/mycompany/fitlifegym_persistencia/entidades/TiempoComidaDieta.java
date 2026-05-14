@@ -10,12 +10,12 @@ import java.util.List;
  *
  * @author BALAMRUSH
  */
-public class TiempoComidaDiieta {
+public class TiempoComidaDieta {
     private String idTCD;
     private String nombreTiempoComidaDIeta;
     private List <RegistroComida> registrosComida;
 
-    public TiempoComidaDiieta() {
+    public TiempoComidaDieta() {
     }
 
     public String getIdTCD() {

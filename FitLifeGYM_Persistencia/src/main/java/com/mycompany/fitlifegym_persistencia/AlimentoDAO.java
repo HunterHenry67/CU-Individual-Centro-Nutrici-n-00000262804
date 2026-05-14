@@ -5,9 +5,11 @@
 package com.mycompany.fitlifegym_persistencia;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Filters;
 import com.mycompany.fitlifegym_persistencia.entidades.Alimento;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Filter;
 import java.util.logging.Logger;
 
 /**
@@ -26,7 +28,7 @@ public class AlimentoDAO implements IAlimentoDAO{
     }
 
     @Override
-    public List<Alimento> consultarAlimento(String nombreAlimento) throws PersistenciaException {
+    public List<Alimento> consultarAlimento() throws PersistenciaException {
         try{
             return coleccionAlimento.find().into(new ArrayList<>());
         }catch(Exception ex){
@@ -36,8 +38,13 @@ public class AlimentoDAO implements IAlimentoDAO{
     }
 
     @Override
-    public List<Alimento> consultarAlimento() throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Alimento buscarAlimentoPorNombre(String nombreAlimento) throws PersistenciaException {
+        try{
+            return coleccionAlimento.find(Filters.eq("nombreAlimento", nombreAlimento)).first();                
+        }catch(Exception ex){
+            LOGGER.severe(ex.getMessage());
+            throw new PersistenciaException("Error al consultar el alimento: "+ex.getMessage());
+        }
     }
 
   

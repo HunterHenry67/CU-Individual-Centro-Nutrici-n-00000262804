@@ -4,10 +4,14 @@
  */
 package com.mycompany.fitlifegym_persistencia;
 
+import com.mycompany.fitlifegym_persistencia.entidades.Padecimiento;
+import java.util.List;
+
 /**
  *
  * @author BALAMRUSH
  */
 public interface ICatalogoPadecimientoDAO {
     
+    public abstract List<Padecimiento> consultarPadecimientos() throws PersistenciaException; 
 }
