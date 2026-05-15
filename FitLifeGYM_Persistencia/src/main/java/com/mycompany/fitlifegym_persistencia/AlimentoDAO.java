@@ -40,7 +40,7 @@ public class AlimentoDAO implements IAlimentoDAO{
     @Override
     public Alimento buscarAlimentoPorNombre(String nombreAlimento) throws PersistenciaException {
         try{
-            return coleccionAlimento.find(Filters.eq("nombreAlimento", nombreAlimento)).first();                
+            return coleccionAlimento.find(Filters.regex("nombreAlimento", nombreAlimento, "i")).first();
         }catch(Exception ex){
             LOGGER.severe(ex.getMessage());
             throw new PersistenciaException("Error al consultar el alimento: "+ex.getMessage());

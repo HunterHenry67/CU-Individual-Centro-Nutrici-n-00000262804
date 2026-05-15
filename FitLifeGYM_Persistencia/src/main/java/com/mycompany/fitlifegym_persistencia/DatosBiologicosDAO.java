@@ -4,8 +4,10 @@
  */
 package com.mycompany.fitlifegym_persistencia;
 
+import com.mongodb.client.MongoCollection;
 import com.mycompany.fitlifegym_persistencia.entidades.DatosBiologicos;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,9 +15,23 @@ import java.util.List;
  */
 public class DatosBiologicosDAO implements IDatosBiologicosDAO{
 
+    private static final Logger LOGGER = Logger.getLogger(DatosBiologicosDAO.class.getName());
+    
+    private MongoCollection coleccionDatosBio;
+    
+    public DatosBiologicosDAO(){
+        this.coleccionDatosBio = ConexionMongoDB.obtenerBaseDatos().getCollection("datosBiologicos", DatosBiologicos.class);
+    }
+   
+
     @Override
     public DatosBiologicos registrarDatosBiologicos(DatosBiologicos datosBiologicos) throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try{
+            coleccionDatosBio.insertOne(this)
+        }catch(Exception ex){
+            LOGGER.severe(ex.getMessage());
+            throw new PersistenciaException("Error al registrar los datos biologicos: "+ ex.getMessage());
+        }
     }
 
     @Override

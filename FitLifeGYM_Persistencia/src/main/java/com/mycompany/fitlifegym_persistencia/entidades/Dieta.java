@@ -5,6 +5,7 @@
 package com.mycompany.fitlifegym_persistencia.entidades;
 
 import java.util.Date;
+import java.util.List;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
 /**
@@ -19,23 +20,23 @@ public class Dieta {
     private String descrpcion;
     private Date fechaInicio;
     private Date fechaFinal;
+    private String idPaciente;
+    private String nombreNutriologo;
+    private List<DiaSemanaDieta> diasSemana;
+    
 
     public Dieta() {
     }
 
-    public Dieta(String idDieta, String nombreDieta, String descrpcion, Date fechaInicio, Date fechaFinal) {
+    public Dieta(String idDieta, String nombreDieta, String descrpcion, Date fechaInicio, Date fechaFinal, String idPaciente, String nombreNutriologo, List<DiaSemanaDieta> diasSemana) {
         this.idDieta = idDieta;
         this.nombreDieta = nombreDieta;
         this.descrpcion = descrpcion;
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
-    }
-
-    public Dieta(String nombreDieta, String descrpcion, Date fechaInicio, Date fechaFinal) {
-        this.nombreDieta = nombreDieta;
-        this.descrpcion = descrpcion;
-        this.fechaInicio = fechaInicio;
-        this.fechaFinal = fechaFinal;
+        this.idPaciente = idPaciente;
+        this.nombreNutriologo = nombreNutriologo;
+        this.diasSemana = diasSemana;
     }
 
     public String getIdDieta() {
@@ -77,6 +78,31 @@ public class Dieta {
     public void setFechaFinal(Date fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
+
+    public String getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(String idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public String getNombreNutriologo() {
+        return nombreNutriologo;
+    }
+
+    public void setNombreNutriologo(String nombreNutriologo) {
+        this.nombreNutriologo = nombreNutriologo;
+    }
+
+    public List<DiaSemanaDieta> getDiasSemana() {
+        return diasSemana;
+    }
+
+    public void setDiasSemana(List<DiaSemanaDieta> diasSemana) {
+        this.diasSemana = diasSemana;
+    }
+
     
     
     

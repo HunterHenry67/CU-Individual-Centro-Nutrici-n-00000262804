@@ -14,9 +14,9 @@ import java.util.List;
 public interface IDietaDAO {
     public abstract Dieta registrarDieta(Dieta dieta) throws PersistenciaException;
 
-    public abstract Dieta consultarDietaPaciente(Long idPaciente) throws PersistenciaException;
+    public abstract Dieta consultarDietaPaciente(String idPaciente) throws PersistenciaException;
 
-    public abstract List<Dieta> consultarDietas(Long idPaciente) throws PersistenciaException;
+    public abstract List<Dieta> consultarDietas(String idPaciente) throws PersistenciaException;
 
-    public abstract List<Dieta> buscarDietaFiltro(Long idDieta) throws PersistenciaException;
+    public abstract List<Dieta> buscarDietaFiltro(String tipoFiltro, String valor) throws PersistenciaException;
 }

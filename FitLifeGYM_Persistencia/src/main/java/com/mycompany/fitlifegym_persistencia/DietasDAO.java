@@ -7,9 +7,11 @@ package com.mycompany.fitlifegym_persistencia;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mycompany.fitlifegym_persistencia.entidades.Dieta;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import org.bson.conversions.Bson;
 
 /**
  *
@@ -37,7 +39,7 @@ public class DietasDAO implements IDietaDAO{
     }
 
     @Override
-    public Dieta consultarDietaPaciente(Long idPaciente) throws PersistenciaException {
+    public Dieta consultarDietaPaciente(String idPaciente) throws PersistenciaException {
         try{
             return collectionDietas.find(Filters.eq("idPaciente", idPaciente)).first();
         }catch(Exception ex){
@@ -47,7 +49,7 @@ public class DietasDAO implements IDietaDAO{
     }
 
     @Override
-    public List<Dieta> consultarDietas(Long idPaciente) throws PersistenciaException {
+    public List<Dieta> consultarDietas(String idPaciente) throws PersistenciaException {
        try{
            return collectionDietas.find(Filters.eq("idPaciente", idPaciente)).into(new ArrayList<>());
        }catch(Exception ex){
@@ -58,9 +60,32 @@ public class DietasDAO implements IDietaDAO{
     }
 
     @Override
-    public List<Dieta> buscarDietaFiltro(Long idDieta) throws PersistenciaException {
+    public List<Dieta> buscarDietaFiltro(String tipoFiltro, String valor) throws PersistenciaException {
         try{
-            collectionDietas.find()
+            Bson filtros;
+            switch(tipoFiltro){
+                case "Nombre":
+                    filtros = Filters.regex("nombrePaciente", valor, "i");
+                    break;
+                case "Dieta":
+                    filtros = Filters.regex("nombreDieta", valor, "i");
+                    break;
+                case "Fecha Inicio":
+                    LocalDate fechaIn = LocalDate.parse(valor);
+                    filtros = Filters.eq("fechaInicio", fechaIn);
+                    break;
+                case "Fecha Final":
+                    LocalDate fechaFi = LocalDate.parse(valor);
+                    filtros = Filters.eq("fechaFinal", fechaFi);
+                    break;
+                case "Nutriologo":
+                    filtros = Filters.regex("nombreNutriologo", valor, "i");
+                    break;
+                default:
+                    return collectionDietas.find().into(new ArrayList<>());
+            }
+            return collectionDietas.find(filtros).into(new ArrayList<>());
+            
         }catch(Exception ex){
             LOGGER.severe(ex.getMessage());
             throw new PersistenciaException("Error al buscar Dieta por Filtro: "+ex.getMessage());
