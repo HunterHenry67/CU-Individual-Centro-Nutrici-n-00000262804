@@ -4,8 +4,12 @@
  */
 package com.mycompany.fitlifegym_persistencia;
 
+import com.mongodb.client.MongoCollection;
 import com.mycompany.fitlifegym_persistencia.entidades.Alergia;
+import java.util.ArrayList;
 import java.util.List;
+
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,19 +17,21 @@ import java.util.List;
  */
 public class AlergiaDAO implements IAlergiaDAO{
 
-    @Override
-    public Alergia agregarAlergia(Alergia alergia) throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private static final Logger LOGGER = Logger.getLogger(AlergiaDAO.class.getName());
+    
+    private MongoCollection<Alergia> coleccionAlergia;
+    
+    public AlergiaDAO(){
+        this.coleccionAlergia = ConexionMongoDB.obtenerBaseDatos().getCollection("alergia", Alergia.class);
     }
-
     @Override
     public List<Alergia> consultarAlergia() throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try{
+            return coleccionAlergia.find().into(new ArrayList<>());
+        }catch(Exception ex){
+            LOGGER.severe(ex.getMessage());
+            throw new PersistenciaException("Error al consultar alergia: "+ex.getMessage());
+        }
     }
 
-    @Override
-    public boolean eliminarAlergia(Long idAlergia) throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }

@@ -13,6 +13,4 @@ import java.util.List;
  */
 public interface IPadecimientoDAO {
     public abstract List<Padecimiento> consultarPadecimiento(Long idPadecimiento) throws PersistenciaException;
-
-    public abstract boolean eliminarPadecimiento(Long idPadecimiento) throws PersistenciaException;
 }
