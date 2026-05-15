@@ -16,6 +16,7 @@ public class Alimento {
     private String idAlimento;
     private String nombreAlimento; 
     private Float cantidad;
+    private byte[] imagen;
 
     public Alimento() {
     }

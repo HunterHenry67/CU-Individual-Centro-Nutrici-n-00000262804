@@ -17,7 +17,6 @@ public class Dieta {
     @BsonProperty("_id")
     private String idDieta;
     private String nombreDieta;
-    private String descrpcion;
     private Date fechaInicio;
     private Date fechaFinal;
     private String idPaciente;
@@ -28,14 +27,14 @@ public class Dieta {
     public Dieta() {
     }
 
-    public Dieta(String idDieta, String nombreDieta, String descrpcion, Date fechaInicio, Date fechaFinal, String idPaciente, String nombreNutriologo, List<DiaSemanaDieta> diasSemana) {
+    public Dieta(String idDieta, String nombreDieta, Date fechaInicio, Date fechaFinal, String idPaciente, String nombreNutriologo, List<DiaSemanaDieta> diasSemana) {
         this.idDieta = idDieta;
         this.nombreDieta = nombreDieta;
-        this.descrpcion = descrpcion;
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
         this.idPaciente = idPaciente;
         this.nombreNutriologo = nombreNutriologo;
+        
         this.diasSemana = diasSemana;
     }
 
@@ -53,14 +52,6 @@ public class Dieta {
 
     public void setNombreDieta(String nombreDieta) {
         this.nombreDieta = nombreDieta;
-    }
-
-    public String getDescrpcion() {
-        return descrpcion;
-    }
-
-    public void setDescrpcion(String descrpcion) {
-        this.descrpcion = descrpcion;
     }
 
     public Date getFechaInicio() {

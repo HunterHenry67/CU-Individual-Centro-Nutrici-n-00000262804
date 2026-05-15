@@ -10,4 +10,32 @@ package com.mycompany.fitlifegym_persistencia.entidades;
  */
 public class UnidadMedida {
     
+    private String idUnidadMedida;
+    private String nombreUnidadMedida;
+
+    public UnidadMedida() {
+    }
+
+    public UnidadMedida(String idUnidadMedida, String nombreUnidadMedida) {
+        this.idUnidadMedida = idUnidadMedida;
+        this.nombreUnidadMedida = nombreUnidadMedida;
+    }
+
+    public String getIdUnidadMedida() {
+        return idUnidadMedida;
+    }
+
+    public void setIdUnidadMedida(String idUnidadMedida) {
+        this.idUnidadMedida = idUnidadMedida;
+    }
+
+    public String getNombreUnidadMedida() {
+        return nombreUnidadMedida;
+    }
+
+    public void setNombreUnidadMedida(String nombreUnidadMedida) {
+        this.nombreUnidadMedida = nombreUnidadMedida;
+    }
+    
+    
 }
