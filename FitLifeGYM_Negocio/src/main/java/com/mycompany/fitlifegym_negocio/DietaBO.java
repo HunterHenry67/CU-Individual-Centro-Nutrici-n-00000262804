@@ -13,33 +13,53 @@ import java.util.logging.Logger;
  *
  * @author BALAMRUSH
  */
-public class DietaBO implements IDietasBO{
+public class DietaBO implements IDietasBO {
 
     private static final Logger LOGGER = Logger.getLogger(DietaBO.class.getName());
-    
+
     private final IDietaDAO dietaDAO;
-    
-    public DietaBO(){
+
+    public DietaBO() {
         this.dietaDAO = new DietasDAO();
     }
 
     @Override
     public void validarDieta(DietaDTO dieta) throws NegocioException {
-        try{
-            if(dieta == null){
-                throw new IllegalArgumentException("La dieta no puede estar vacía");            
-            }
-            if(dieta.idPaciente() == null || dieta.idPaciente().trim().isEmpty()){
-                throw new IllegalArgumentException("Id del cliente faltante");
-            }
-        }catch(Exception ex){
-            throw new NegocioException();
+        if (dieta == null) {
+            throw new NegocioException("La dieta no puede estar vacía");
         }
+        if (dieta.idPaciente() == null || dieta.idPaciente().trim().isEmpty()) {
+            throw new NegocioException("Id del cliente faltante");
+        }
+        if (dieta.diaSemana() == null) {
+            throw new NegocioException("Favor de elegir un día de la semana.");
+        }
+        if (dieta.fechaInicio() == null) {
+            throw new NegocioException("Favor de colocar una fecha de inicio.");
+        }
+        if (dieta.fechaFinal() == null) {
+            throw new NegocioException("Favor de colocar una fecha final.");
+        }
+        if (dieta.nombreNutriologo() == null || dieta.nombreNutriologo().trim().isEmpty()) {
+            throw new NegocioException("Favor de colocar un Nutriologo.");
+        }
+        if (dieta.nombreDieta() == null || dieta.nombreDieta().trim().isEmpty()) {
+            throw new NegocioException("Favor de colocar un nombre de Dieta.");
+        }
+
     }
 
     @Override
     public DietaDTO consultarDietaPorID(String id) throws NegocioException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try{
+            if(id == null){
+                throw new NegocioException("El ID se encuentra vacío.");                    
+            }
+            
+            Dieta
+        }catch(NegocioException ex){
+            
+        }
     }
-    
+
 }
