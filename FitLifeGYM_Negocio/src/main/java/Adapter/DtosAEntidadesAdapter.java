@@ -164,13 +164,13 @@ public class DtosAEntidadesAdapter {
         return entidadDieta;
     }
     
-    public static DietaDTO convertirDietaADTO(DietaDTO dieta){
+    public static DietaDTO convertirDietaADTO(Dieta dieta){
      if(dieta == null)
          return null;
      
      List<DiaSemanaDTO> listaDiasDTO = new ArrayList<>();
-     if(dieta.diaSemana() != null){
-         for(DiaSemanaDieta diaEnt: dieta.diaSemana()){
+     if(dieta.getDiasSemana() != null){
+         for(DiaSemanaDieta diaEnt: dieta.getDiasSemana()){
              List<TiempoComidaDietaDTO> listaTiemposDTO = new ArrayList<>();
              if(diaEnt.getTiemposComida() != null){
                  for(TiempoComidaDieta tiempoEnt: diaEnt.getTiemposComida()){
@@ -183,16 +183,22 @@ public class DtosAEntidadesAdapter {
                              }
                              UnidadMedidaDTO unidadDTO = null;
                              if(regEnt.getUnidadMedida()!= null){
-                                 unidadDTO = new UnidadMedidaDTO(),regEnt.getUnidadMedida(), regEnt.getUnidadMedida().getNombreUnidadMedida();
+                                 unidadDTO = new UnidadMedidaDTO(regEnt.getIdRC(), regEnt.getUnidadMedida().getNombreUnidadMedida());
                              }
-                             RegistroComidaDTO regDTO = new RegistroComidaDTO(alimentoDTO, regEnt.getCantidad(), unidadDTO);
+                             RegistroComidaDTO regDTO = new RegistroComidaDTO(regEnt.getIdRC(), alimentoDTO,  unidadDTO, regEnt.getCantidad());
                              listaRegistrosDTO.add(regDTO);
                          }
                      }
+                     TiempoComidaDietaDTO tiempoDTO = new TiempoComidaDietaDTO(tiempoEnt.getIdTCD(), tiempoEnt.getNombreTiempoComidaDIeta(), listaRegistrosDTO);
+                     listaTiemposDTO.add(tiempoDTO);
                  }
              }
+             DiaSemanaDTO diaDTO = new DiaSemanaDTO(diaEnt.getNombreDiaSemanaDieta(), listaTiemposDTO);
+             listaDiasDTO.add(diaDTO);
          }
+         return
      }
+     
     }
 
 }

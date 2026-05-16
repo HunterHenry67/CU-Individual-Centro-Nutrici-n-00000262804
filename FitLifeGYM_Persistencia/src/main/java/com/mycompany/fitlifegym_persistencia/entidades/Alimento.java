@@ -16,19 +16,19 @@ public class Alimento {
     private String idAlimento;
     private String nombreAlimento; 
     private Float cantidad;
-    private byte[] imagen;
+    private Imagen imagen;
 
     public Alimento() {
     }
 
-    public Alimento(String idAlimento, String nombreAlimento, Float cantidad, byte[] imagen) {
+    public Alimento(String idAlimento, String nombreAlimento, Float cantidad, Imagen imagen) {
         this.idAlimento = idAlimento;
         this.nombreAlimento = nombreAlimento;
         this.cantidad = cantidad;
         this.imagen = imagen;
     }
 
-    public Alimento(String nombreAlimento, Float cantidad, byte[] imagen) {
+    public Alimento(String nombreAlimento, Float cantidad, Imagen imagen) {
         this.nombreAlimento = nombreAlimento;
         this.cantidad = cantidad;
         this.imagen = imagen;
@@ -58,11 +58,13 @@ public class Alimento {
         this.cantidad = cantidad;
     }
 
-    public byte[] getImagen() {
+    public Imagen getImagen() {
         return imagen;
     }
 
-    public void setImagen(byte[] imagen) {
+    public void setImagen(Imagen imagen) {
         this.imagen = imagen;
     }
+
+    
 }
