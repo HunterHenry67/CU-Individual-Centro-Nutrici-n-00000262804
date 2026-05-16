@@ -4,6 +4,7 @@
  */
 package Adapter;
 
+import com.mycompany.fitlifegym_dtos.AlimentoDTO;
 import com.mycompany.fitlifegym_dtos.DiaSemanaDTO;
 import com.mycompany.fitlifegym_dtos.DietaDTO;
 import com.mycompany.fitlifegym_dtos.EstadoDTO;
@@ -13,6 +14,7 @@ import com.mycompany.fitlifegym_dtos.NuevoClienteDTO;
 import com.mycompany.fitlifegym_dtos.RegistroComidaDTO;
 import com.mycompany.fitlifegym_dtos.TiempoComidaDietaDTO;
 import com.mycompany.fitlifegym_dtos.TipoMembresiaDTO;
+import com.mycompany.fitlifegym_dtos.UnidadMedidaDTO;
 import com.mycompany.fitlifegym_persistencia.entidades.Alimento;
 import com.mycompany.fitlifegym_persistencia.entidades.Cliente;
 import com.mycompany.fitlifegym_persistencia.entidades.DiaSemanaDieta;
@@ -148,8 +150,7 @@ public class DtosAEntidadesAdapter {
                                     regEntidad.setUnidadMedida(unidadEntidad);
                                 }
                                 listaRegistroEntid.add(regEntidad);
-                            }
-                            
+                            }                            
                         }
                         tiempoEntidad.setRegistrosComida(listaRegistroEntid);
                         listaTiemposEntidad.add(tiempoEntidad);
@@ -157,11 +158,41 @@ public class DtosAEntidadesAdapter {
                 }
             diaEntidad.setTiemposComida(listaTiemposEntidad);
             dias.add(diaEntidad);
-            }
-            
+            }           
         }
         entidadDieta.setDiasSemana(dias);
         return entidadDieta;
+    }
+    
+    public static DietaDTO convertirDietaADTO(DietaDTO dieta){
+     if(dieta == null)
+         return null;
+     
+     List<DiaSemanaDTO> listaDiasDTO = new ArrayList<>();
+     if(dieta.diaSemana() != null){
+         for(DiaSemanaDieta diaEnt: dieta.diaSemana()){
+             List<TiempoComidaDietaDTO> listaTiemposDTO = new ArrayList<>();
+             if(diaEnt.getTiemposComida() != null){
+                 for(TiempoComidaDieta tiempoEnt: diaEnt.getTiemposComida()){
+                     List<RegistroComidaDTO> listaRegistrosDTO = new ArrayList<>();
+                     if(tiempoEnt.getRegistrosComida() != null){
+                         for(RegistroComida regEnt: tiempoEnt.getRegistrosComida()){
+                             AlimentoDTO alimentoDTO = null;
+                             if(regEnt.getAlimento() != null){
+                                 alimentoDTO = new AlimentoDTO(regEnt.getIdRC(), regEnt.getAlimento(), regEnt.getCantidad(), regEnt.get);                               
+                             }
+                             UnidadMedidaDTO unidadDTO = null;
+                             if(regEnt.getUnidadMedida()!= null){
+                                 unidadDTO = new UnidadMedidaDTO(),regEnt.getUnidadMedida(), regEnt.getUnidadMedida().getNombreUnidadMedida();
+                             }
+                             RegistroComidaDTO regDTO = new RegistroComidaDTO(alimentoDTO, regEnt.getCantidad(), unidadDTO);
+                             listaRegistrosDTO.add(regDTO);
+                         }
+                     }
+                 }
+             }
+         }
+     }
     }
 
 }
