@@ -26,7 +26,12 @@ public class DietaBO implements IDietasBO{
     @Override
     public void validarDieta(DietaDTO dieta) throws NegocioException {
         try{
-            if(idDieta == null || )
+            if(dieta == null){
+                throw new IllegalArgumentException("La dieta no puede estar vacía");            
+            }
+            if(dieta.idPaciente() == null || dieta.idPaciente().trim().isEmpty()){
+                throw new IllegalArgumentException("Id del cliente faltante");
+            }
         }catch(Exception ex){
             throw new NegocioException();
         }
