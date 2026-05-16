@@ -4,16 +4,28 @@
  */
 package Adapter;
 
+import com.mycompany.fitlifegym_dtos.DiaSemanaDTO;
+import com.mycompany.fitlifegym_dtos.DietaDTO;
 import com.mycompany.fitlifegym_dtos.EstadoDTO;
 import com.mycompany.fitlifegym_dtos.NuevaMembresiaCompradaDTO;
 import com.mycompany.fitlifegym_dtos.NuevaMembresiaDTO;
 import com.mycompany.fitlifegym_dtos.NuevoClienteDTO;
+import com.mycompany.fitlifegym_dtos.RegistroComidaDTO;
+import com.mycompany.fitlifegym_dtos.TiempoComidaDietaDTO;
 import com.mycompany.fitlifegym_dtos.TipoMembresiaDTO;
+import com.mycompany.fitlifegym_persistencia.entidades.Alimento;
 import com.mycompany.fitlifegym_persistencia.entidades.Cliente;
+import com.mycompany.fitlifegym_persistencia.entidades.DiaSemanaDieta;
+import com.mycompany.fitlifegym_persistencia.entidades.Dieta;
 import com.mycompany.fitlifegym_persistencia.entidades.Estado;
 import com.mycompany.fitlifegym_persistencia.entidades.Membresia;
 import com.mycompany.fitlifegym_persistencia.entidades.MembresiaComprada;
+import com.mycompany.fitlifegym_persistencia.entidades.RegistroComida;
+import com.mycompany.fitlifegym_persistencia.entidades.TiempoComidaDieta;
 import com.mycompany.fitlifegym_persistencia.entidades.TipoMembresia;
+import com.mycompany.fitlifegym_persistencia.entidades.UnidadMedida;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -95,6 +107,61 @@ public class DtosAEntidadesAdapter {
             return EstadoDTO.ACTIVO;
         }
         return EstadoDTO.INACTIVO;
+    }
+    
+    public static Dieta comvertirDietaADTO(DietaDTO dietaDTO){
+        if(dietaDTO == null){
+            return null;
+        }
+        Dieta entidadDieta = new Dieta();
+        entidadDieta.setIdDieta(dietaDTO.idDieta());
+        entidadDieta.setIdPaciente(dietaDTO.idPaciente());
+        entidadDieta .setNombreDieta(dietaDTO.nombreDieta());
+        entidadDieta.setFechaInicio(dietaDTO.fechaInicio());
+        entidadDieta.setFechaFinal(dietaDTO.fechaFinal());
+        entidadDieta.setNombreNutriologo(dietaDTO.nombreNutriologo());
+        List<DiaSemanaDieta> dias = new ArrayList<>();
+        if(dietaDTO.diaSemana() == null){
+            for(DiaSemanaDTO diaSeEntidad: dietaDTO.diaSemana()){
+                DiaSemanaDieta diaEntidad = new DiaSemanaDieta();
+                diaEntidad.setNombreDiaSemanaDieta(diaSeEntidad.nombreDiaSemana());
+                List<TiempoComidaDieta> listaTiemposEntidad = new ArrayList<>();
+                if(diaSeEntidad.tiempoComida() != null){
+                    for(TiempoComidaDietaDTO tiempoDTO: diaSeEntidad.tiempoComida()){
+                        TiempoComidaDieta tiempoEntidad = new TiempoComidaDieta();
+                        tiempoEntidad.setNombreTiempoComidaDIeta(tiempoDTO.nombreTiempoComidaDieta());
+                        List<RegistroComida> listaRegistroEntid = new ArrayList<>();
+                        if(tiempoDTO.registroComidas() != null){
+                            for(RegistroComidaDTO regDTO: tiempoDTO.registroComidas()){
+                                RegistroComida regEntidad = new RegistroComida();
+                                regEntidad.setCantidad(regDTO.cantidad());
+                                if(regDTO.alimento()!=  null){
+                                    Alimento alimentoEntidad = new Alimento();
+                                    alimentoEntidad.setIdAlimento(regDTO.alimento().idAlimento());
+                                    alimentoEntidad.setNombreAlimento(regDTO.alimento().nombreAlimento());
+                                    regEntidad.setAlimento(alimentoEntidad);
+                                }
+                                if(regDTO.unidadMedida() != null){
+                                    UnidadMedida unidadEntidad = new UnidadMedida();
+                                    unidadEntidad.setIdUnidadMedida(regDTO.unidadMedida().idUnidad());
+                                    unidadEntidad.setNombreUnidadMedida(regDTO.unidadMedida().nombreUnidadMedida());
+                                    regEntidad.setUnidadMedida(unidadEntidad);
+                                }
+                                listaRegistroEntid.add(regEntidad);
+                            }
+                            
+                        }
+                        tiempoEntidad.setRegistrosComida(listaRegistroEntid);
+                        listaTiemposEntidad.add(tiempoEntidad);
+                    }
+                }
+            diaEntidad.setTiemposComida(listaTiemposEntidad);
+            dias.add(diaEntidad);
+            }
+            
+        }
+        entidadDieta.setDiasSemana(dias);
+        return entidadDieta;
     }
 
 }

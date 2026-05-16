@@ -4,13 +4,10 @@
  */
 package com.mycompany.fitlifegym_dtos;
 
-import java.util.Date;
-import java.util.List;
-
 /**
  *
  * @author BALAMRUSH
  */
-public record DietaDTO(String idDieta, String nombreDieta, Date fechaInicio, Date fechaFinal, String idPaciente, String nombreNutriologo, List<DiaSemanaDTO> diaSemana) {
+public record RegistroComidaDTO(String idRC, AlimentoDTO alimento, UnidadMedidaDTO unidadMedida, Double cantidad) {
 
 }

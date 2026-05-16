@@ -8,6 +8,6 @@ package com.mycompany.fitlifegym_dtos;
  *
  * @author BALAMRUSH
  */
-public record AlimentoDTO(String nombreAlimento, Float cantidad, byte[] imagen) {
+public record AlimentoDTO(String idAlimento, String nombreAlimento, Float cantidad, byte[] imagen) {
 
 }

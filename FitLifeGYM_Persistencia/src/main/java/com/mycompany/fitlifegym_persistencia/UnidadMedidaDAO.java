@@ -20,7 +20,7 @@ public class UnidadMedidaDAO implements IUnidadMedidaDAO{
     
     private MongoCollection coleccionUnidadMedida;
     
-    private UnidadMedidaDAO(){
+    public UnidadMedidaDAO(){
         this.coleccionUnidadMedida = ConexionMongoDB.obtenerBaseDatos().getCollection("unidadMedida", UnidadMedida.class);
     }
 

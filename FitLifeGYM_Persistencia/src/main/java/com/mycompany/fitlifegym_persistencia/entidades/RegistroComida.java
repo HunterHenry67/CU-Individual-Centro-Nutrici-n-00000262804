@@ -10,20 +10,20 @@ package com.mycompany.fitlifegym_persistencia.entidades;
  */
 public class RegistroComida {
     private String idRC;
-    private String idAlimento;
-    private String idUnidadMedida;
+    private Alimento alimento;
+    private UnidadMedida unidadMedida;
     private Double cantidad;
 
     public RegistroComida() {
     }       
-    
-    public RegistroComida(String idRC, String idAlimento, String idUnidadMedida, Double cantidad) {
+
+    public RegistroComida(String idRC, Alimento alimento, UnidadMedida unidadMedida, Double cantidad) {
         this.idRC = idRC;
-        this.idAlimento = idAlimento;
+        this.alimento = alimento;
+        this.unidadMedida = unidadMedida;
         this.cantidad = cantidad;
-        this.idUnidadMedida = idUnidadMedida;
     }
-    
+
     public String getIdRC() {
         return idRC;
     }
@@ -32,12 +32,20 @@ public class RegistroComida {
         this.idRC = idRC;
     }
 
-    public String getIdAlimento() {
-        return idAlimento;
+    public Alimento getAlimento() {
+        return alimento;
     }
 
-    public void setIdAlimento(String idAlimento) {
-        this.idAlimento = idAlimento;
+    public void setAlimento(Alimento alimento) {
+        this.alimento = alimento;
+    }
+
+    public UnidadMedida getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(UnidadMedida unidadMedida) {
+        this.unidadMedida = unidadMedida;
     }
 
     public Double getCantidad() {
@@ -47,13 +55,6 @@ public class RegistroComida {
     public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
     }
-
-    public String getIdUnidadMedida() {
-        return idUnidadMedida;
-    }
-
-    public void setIdUnidadMedida(String idUnidadMedida) {
-        this.idUnidadMedida = idUnidadMedida;
-    }
+    
     
 }

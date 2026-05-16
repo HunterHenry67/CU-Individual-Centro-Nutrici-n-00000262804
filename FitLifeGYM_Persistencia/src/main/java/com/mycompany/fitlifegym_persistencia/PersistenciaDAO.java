@@ -21,17 +21,15 @@ import java.util.List;
 public class PersistenciaDAO implements IPersistenciaDAO{
     private IAlergiaDAO alergiaDAO;
     private IAlimentoDAO alimentoDAO;
-    private IDatosBiologicosDAO datosBiologicosDAO;
     private IDietaDAO dietasDAO;
     private IEstiloVidaDAO estiloVidaDAO;
     private IPacienteDAO pacienteDAO;
     private IPadecimientoDAO padecimientoDAO;
     private IUnidadMedidaDAO unidadMedidaDAO;
 
-    public PersistenciaDAO(IAlergiaDAO alergiaDAO, IAlimentoDAO alimentoDAO, IDatosBiologicosDAO datosBiologicosDAO, IDietaDAO dietasDAO, IEstiloVidaDAO estiloVidaDAO, IPacienteDAO pacienteDAO, IPadecimientoDAO padecimientoDAO, IUnidadMedidaDAO unidadMedidaDAO) {
+    public PersistenciaDAO(IAlergiaDAO alergiaDAO, IAlimentoDAO alimentoDAO, IDietaDAO dietasDAO, IEstiloVidaDAO estiloVidaDAO, IPacienteDAO pacienteDAO, IPadecimientoDAO padecimientoDAO, IUnidadMedidaDAO unidadMedidaDAO) {
         this.alergiaDAO = alergiaDAO;
         this.alimentoDAO = alimentoDAO;
-        this.datosBiologicosDAO = datosBiologicosDAO;
         this.dietasDAO = dietasDAO;
         this.estiloVidaDAO = estiloVidaDAO;
         this.pacienteDAO = pacienteDAO;
