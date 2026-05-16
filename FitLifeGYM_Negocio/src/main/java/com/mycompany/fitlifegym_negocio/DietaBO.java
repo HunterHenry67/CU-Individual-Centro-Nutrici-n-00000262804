@@ -7,12 +7,15 @@ package com.mycompany.fitlifegym_negocio;
 import com.mycompany.fitlifegym_dtos.DietaDTO;
 import com.mycompany.fitlifegym_persistencia.DietasDAO;
 import com.mycompany.fitlifegym_persistencia.IDietaDAO;
+import java.util.logging.Logger;
 
 /**
  *
  * @author BALAMRUSH
  */
 public class DietaBO implements IDietasBO{
+
+    private static final Logger LOGGER = Logger.getLogger(DietaBO.class.getName());
     
     private final IDietaDAO dietaDAO;
     
@@ -22,7 +25,11 @@ public class DietaBO implements IDietasBO{
 
     @Override
     public void validarDieta(DietaDTO dieta) throws NegocioException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try{
+            if(idDieta == null || )
+        }catch(Exception ex){
+            throw new NegocioException();
+        }
     }
 
     @Override
