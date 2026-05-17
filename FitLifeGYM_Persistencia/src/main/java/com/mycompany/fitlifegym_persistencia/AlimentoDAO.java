@@ -47,5 +47,15 @@ public class AlimentoDAO implements IAlimentoDAO{
         }
     }
 
+    @Override
+    public Alimento consultarAlimentoPorID(Long idAlimento) throws PersistenciaException {
+        try{
+            return coleccionAlimento.find(Filters.eq("_id", idAlimento)).first();
+        }catch(Exception ex){
+            LOGGER.severe(ex.getMessage());
+            throw new PersistenciaException("Error al consultar el alimento por id: "+ex.getMessage());
+        }
+    }
+
   
 }

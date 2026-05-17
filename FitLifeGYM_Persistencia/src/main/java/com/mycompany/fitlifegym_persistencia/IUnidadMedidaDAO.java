@@ -13,5 +13,7 @@ import java.util.List;
  */
 public interface IUnidadMedidaDAO {
 
-    public abstract List<UnidadMedida> consultarUnidadMedida(Long idUnidadMedida) throws PersistenciaException;
+    public abstract List<UnidadMedida> consultarUnidadMedida() throws PersistenciaException;
+    
+    public abstract UnidadMedida consultarUniMedidaPorID(Long idUnidadMedida) throws PersistenciaException;
 }
