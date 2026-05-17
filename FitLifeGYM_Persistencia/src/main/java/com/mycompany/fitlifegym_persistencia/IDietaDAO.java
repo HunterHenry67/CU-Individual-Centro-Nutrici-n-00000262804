@@ -16,7 +16,9 @@ public interface IDietaDAO {
 
     public abstract Dieta consultarDietaPaciente(String idPaciente) throws PersistenciaException;
 
-    public abstract List<Dieta> consultarDietas(String idPaciente) throws PersistenciaException;
+    public abstract List<Dieta> consultarDietas() throws PersistenciaException;
 
     public abstract List<Dieta> buscarDietaFiltro(String tipoFiltro, String valor) throws PersistenciaException;
+    
+    public abstract void eliminarDieta(String idDieta) throws PersistenciaException;
 }

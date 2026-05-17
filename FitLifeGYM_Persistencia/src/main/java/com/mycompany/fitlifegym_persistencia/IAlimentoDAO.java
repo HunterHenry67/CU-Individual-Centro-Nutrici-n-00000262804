@@ -17,5 +17,5 @@ public interface IAlimentoDAO {
     
     public abstract Alimento buscarAlimentoPorNombre(String nombreAlimento) throws PersistenciaException;
     
-    public abstract  Alimento consultarAlimentoPorID(Long idAlimento) throws PersistenciaException;
+    public abstract  Alimento consultarAlimentoPorID(String idAlimento) throws PersistenciaException;
 }

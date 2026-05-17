@@ -37,7 +37,7 @@ public class UnidadMedidaDAO implements IUnidadMedidaDAO{
     }
 
     @Override
-    public UnidadMedida consultarUniMedidaPorID(Long idUnidadMedida) throws PersistenciaException {
+    public UnidadMedida consultarUniMedidaPorID(String idUnidadMedida) throws PersistenciaException {
         try{
             return coleccionUnidadMedida.find(Filters.eq("_id", idUnidadMedida)).first();
         }catch(Exception ex){

@@ -14,6 +14,6 @@ import java.util.List;
 public interface IEstiloVidaDAO {
     public abstract EstiloVida seleccionarEstiloVida(EstiloVida estiloVida) throws PersistenciaException;
 
-    public abstract List<EstiloVida> consultarEstiloVida(Long idEstiloVida) throws PersistenciaException;
+    public abstract List<EstiloVida> consultarEstiloVida(String idEstiloVida) throws PersistenciaException;
 
 }

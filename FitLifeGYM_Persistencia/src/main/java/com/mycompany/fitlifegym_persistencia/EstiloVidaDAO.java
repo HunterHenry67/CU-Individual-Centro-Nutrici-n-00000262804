@@ -36,7 +36,7 @@ public class EstiloVidaDAO implements IEstiloVidaDAO{
     }
 
     @Override
-    public List<EstiloVida> consultarEstiloVida(Long idEstiloVida) throws PersistenciaException {
+    public List<EstiloVida> consultarEstiloVida(String idEstiloVida) throws PersistenciaException {
         try{
             return coleccionEstiloVida.find().into(new ArrayList<>());
         }catch(Exception ex){

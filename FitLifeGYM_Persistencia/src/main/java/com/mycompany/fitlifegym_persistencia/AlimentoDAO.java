@@ -9,7 +9,6 @@ import com.mongodb.client.model.Filters;
 import com.mycompany.fitlifegym_persistencia.entidades.Alimento;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Filter;
 import java.util.logging.Logger;
 
 /**
@@ -48,7 +47,7 @@ public class AlimentoDAO implements IAlimentoDAO{
     }
 
     @Override
-    public Alimento consultarAlimentoPorID(Long idAlimento) throws PersistenciaException {
+    public Alimento consultarAlimentoPorID(String idAlimento) throws PersistenciaException {
         try{
             return coleccionAlimento.find(Filters.eq("_id", idAlimento)).first();
         }catch(Exception ex){

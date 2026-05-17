@@ -6,6 +6,7 @@ package com.mycompany.fitlifegym_persistencia;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
 import com.mycompany.fitlifegym_persistencia.entidades.Dieta;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -49,9 +50,9 @@ public class DietasDAO implements IDietaDAO{
     }
 
     @Override
-    public List<Dieta> consultarDietas(String idPaciente) throws PersistenciaException {
+    public List<Dieta> consultarDietas() throws PersistenciaException {
        try{
-           return collectionDietas.find(Filters.eq("idPaciente", idPaciente)).into(new ArrayList<>());
+           return collectionDietas.find().into(new ArrayList<>());
        }catch(Exception ex){
            LOGGER.severe(ex.getMessage());
            throw new PersistenciaException("Error al consultar dietas: "+ ex.getMessage());
@@ -89,6 +90,16 @@ public class DietasDAO implements IDietaDAO{
         }catch(Exception ex){
             LOGGER.severe(ex.getMessage());
             throw new PersistenciaException("Error al buscar Dieta por Filtro: "+ex.getMessage());
+        }
+    }
+
+    @Override
+    public void eliminarDieta(String idDieta) throws PersistenciaException {
+        try{                     
+            collectionDietas.deleteOne(Filters.eq("_id", idDieta));
+        }catch(Exception ex){
+            LOGGER.severe(ex.getMessage());
+            throw new PersistenciaException("Error el eliminar la Dieta: "+ex.getMessage());
         }
     }
 

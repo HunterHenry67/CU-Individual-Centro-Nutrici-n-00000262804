@@ -7,6 +7,9 @@ package com.mycompany.fitlifegym_negocio;
 import com.mycompany.fitlifegym_dtos.DietaDTO;
 import com.mycompany.fitlifegym_persistencia.DietasDAO;
 import com.mycompany.fitlifegym_persistencia.IDietaDAO;
+import com.mycompany.fitlifegym_persistencia.PersistenciaException;
+import com.mycompany.fitlifegym_persistencia.entidades.Dieta;
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -24,42 +27,73 @@ public class DietaBO implements IDietasBO {
     }
 
     @Override
-    public void validarDieta(DietaDTO dieta) throws NegocioException {
-        if (dieta == null) {
-            throw new NegocioException("La dieta no puede estar vacía");
+    public Dieta registrarDieta(Dieta dieta) throws NegocioException {
+        try{
+            if(dieta == null){
+                throw new NegocioException("La dieta no puede estar vacía.");
+            }
+            if(dieta.getIdPaciente() == null || dieta.getIdPaciente().trim().isEmpty()){
+                throw new NegocioException("La dieta debe tener un paciente asignado.");
+            }
+            return dietaDAO.registrarDieta(dieta);
+        }catch(PersistenciaException ex){
+            LOGGER.severe(ex.getMessage());
+            throw new NegocioException("Error al querer validar la dieta: "+ex.getMessage());
         }
-        if (dieta.idPaciente() == null || dieta.idPaciente().trim().isEmpty()) {
-            throw new NegocioException("Id del cliente faltante");
-        }
-        if (dieta.diaSemana() == null) {
-            throw new NegocioException("Favor de elegir un día de la semana.");
-        }
-        if (dieta.fechaInicio() == null) {
-            throw new NegocioException("Favor de colocar una fecha de inicio.");
-        }
-        if (dieta.fechaFinal() == null) {
-            throw new NegocioException("Favor de colocar una fecha final.");
-        }
-        if (dieta.nombreNutriologo() == null || dieta.nombreNutriologo().trim().isEmpty()) {
-            throw new NegocioException("Favor de colocar un Nutriologo.");
-        }
-        if (dieta.nombreDieta() == null || dieta.nombreDieta().trim().isEmpty()) {
-            throw new NegocioException("Favor de colocar un nombre de Dieta.");
-        }
-
     }
 
     @Override
-    public DietaDTO consultarDietaPorID(String id) throws NegocioException {
+    public Dieta consultarDietaPaciente(String idPaciente) throws NegocioException {
+       try{
+           if(idPaciente == null || idPaciente.trim().isEmpty()){
+               throw new NegocioException("El identificador del paciente es obligatorio.");
+           }
+           return dietaDAO.consultarDietaPaciente(idPaciente);
+       }catch(PersistenciaException ex){
+           LOGGER.severe(ex.getMessage());
+           throw new NegocioException("Error al consultar el histroial de dietas."+ex.getMessage());
+       }
+    }
+
+    @Override
+    public List<Dieta> consultarDietas() throws NegocioException {
         try{
-            if(id == null){
-                throw new NegocioException("El ID se encuentra vacío.");                    
-            }
-            
-            Dieta
-        }catch(NegocioException ex){
-            
+            List<Dieta> dietas = dietaDAO.consultarDietas();
+            return dietas;
+        }catch(PersistenciaException ex){
+            LOGGER.severe(ex.getMessage());
+            throw new NegocioException("Error al consultra las dietas."+ex.getMessage());
         }
     }
+
+    @Override
+    public void eliminarDieta(String idDieta) throws NegocioException {
+        try{
+            if(idDieta == null || idDieta.trim().isEmpty()){
+                throw new NegocioException("Favor de colocar el id del paciente para eliminar la dieta.");
+            }
+            dietaDAO.eliminarDieta(idDieta);
+        }catch(PersistenciaException ex){
+            LOGGER.severe(ex.getMessage());
+            throw new NegocioException("No fue posible eliminar la la dieta: "+ex.getMessage());
+        }
+    }
+
+    
+
+    @Override
+    public List<Dieta> buscarDietaFiltro(String tipoFiltro, String valor) throws NegocioException {
+        try{
+            if(tipoFiltro == null || valor == null || valor.trim().isEmpty()){
+                throw new NegocioException("Se debe de colocar un filtro y un vakor para poder realizar la búsqueda.");
+            }
+            return dietaDAO.buscarDietaFiltro(tipoFiltro, valor);
+        }catch(PersistenciaException ex){
+            LOGGER.severe(ex.getMessage());
+            throw new NegocioException("Ocurrió un error al filtar la dietas: "+ex.getMessage());
+        }
+    }
+
+    
 
 }

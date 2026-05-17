@@ -15,5 +15,5 @@ public interface IUnidadMedidaDAO {
 
     public abstract List<UnidadMedida> consultarUnidadMedida() throws PersistenciaException;
     
-    public abstract UnidadMedida consultarUniMedidaPorID(Long idUnidadMedida) throws PersistenciaException;
+    public abstract UnidadMedida consultarUniMedidaPorID(String idUnidadMedida) throws PersistenciaException;
 }
