@@ -30,8 +30,7 @@ public class PersistenciaDAO implements IPersistenciaDAO{
 
     public PersistenciaDAO() {
     }
-
-    
+   
     public PersistenciaDAO(IAlergiaDAO alergiaDAO, IAlimentoDAO alimentoDAO, IDietaDAO dietasDAO, IEstiloVidaDAO estiloVidaDAO, IPacienteDAO pacienteDAO, IPadecimientoDAO padecimientoDAO, IUnidadMedidaDAO unidadMedidaDAO) {
         this.alergiaDAO = alergiaDAO;
         this.alimentoDAO = alimentoDAO;

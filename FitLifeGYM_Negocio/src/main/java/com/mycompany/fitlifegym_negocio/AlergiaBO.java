@@ -4,10 +4,15 @@
  */
 package com.mycompany.fitlifegym_negocio;
 
+import Adapter.DtosAEntidadesAdapter;
+import com.mycompany.fitlifegym_dtos.AlergiaDTO;
 import com.mycompany.fitlifegym_persistencia.AlergiaDAO;
 import com.mycompany.fitlifegym_persistencia.IAlergiaDAO;
+import com.mycompany.fitlifegym_persistencia.IPersistenciaDAO;
+import com.mycompany.fitlifegym_persistencia.PersistenciaDAO;
 import com.mycompany.fitlifegym_persistencia.PersistenciaException;
 import com.mycompany.fitlifegym_persistencia.entidades.Alergia;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -19,17 +24,25 @@ public class AlergiaBO implements IAlergiaBO{
 
     private static final Logger LOGGER = Logger.getLogger(AlergiaBO.class.getName());
     
-    private final IAlergiaDAO alergiaDAO;
+    private final IPersistenciaDAO persistenciaFachada;
+    private final DtosAEntidadesAdapter adapter;
     
     public AlergiaBO(){
-        this.alergiaDAO = new AlergiaDAO();
+        this.persistenciaFachada = new PersistenciaDAO();
+        this.adapter = new DtosAEntidadesAdapter();
     }
 
     @Override
     public List<Alergia> consultarAlergia() throws NegocioException {
         try{
-            List<Alergia> alergias = alergiaDAO.consultarAlergia();
-            return alergias;
+            List<Alergia> alergias = persistenciaFachada.consultarAlergia();
+            List<AlergiaDTO> listaDtos = new ArrayList<>();
+            if(alergias != null){
+                for(Alergia entidad : alergias){
+                    listaDtos.add(adapter.adaptarAlimentosEntidad(entidad));
+                }
+            }
+            return 
         }catch(PersistenciaException ex){
             throw new NegocioException("No se pudo consultar todas las alergias: "+ex.getMessage());
         }

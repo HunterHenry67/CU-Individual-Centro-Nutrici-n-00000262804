@@ -4,13 +4,13 @@
  */
 package com.mycompany.fitlifegym_negocio;
 
+import Adapter.DtosAEntidadesAdapter;
 import com.mycompany.fitlifegym_dtos.AlimentoDTO;
-import com.mycompany.fitlifegym_persistencia.AlimentoDAO;
-import com.mycompany.fitlifegym_persistencia.IAlimentoDAO;
 import com.mycompany.fitlifegym_persistencia.IPersistenciaDAO;
 import com.mycompany.fitlifegym_persistencia.PersistenciaDAO;
 import com.mycompany.fitlifegym_persistencia.PersistenciaException;
 import com.mycompany.fitlifegym_persistencia.entidades.Alimento;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,16 +23,24 @@ public class AlimentoBO implements IAlimentoBO{
     private static final Logger LOGGER = Logger.getLogger(AlimentoBO.class.getName());
     
     private final IPersistenciaDAO persistenciaFachada;
+    private final DtosAEntidadesAdapter adapter;
     
     public AlimentoBO(){
         this.persistenciaFachada = new PersistenciaDAO();
+        this.adapter = new DtosAEntidadesAdapter();
     }
 
     @Override
     public List<AlimentoDTO> consultarAlimento() throws NegocioException {
         try{
-            List<Alimento> alimentos = pers
-            return adaptarAlimentosEntidad(alimentos);
+            List<Alimento> alimentos = persistenciaFachada.consultarAlimento();
+            List<AlimentoDTO> listaDtos = new ArrayList<>();
+            if(alimentos != null){
+                for(Alimento entidad : alimentos){
+                    listaDtos.add(adapter.adaptarAlimentosEntidad(entidad));
+                }
+            }
+            return listaDtos;
         }catch(PersistenciaException ex){
             LOGGER.severe(ex.getMessage());
             throw new NegocioException("No se pudo consultar los alimentos: "+ex.getMessage());
@@ -45,7 +53,8 @@ public class AlimentoBO implements IAlimentoBO{
             if(nombreAlimento == null || nombreAlimento.trim().isEmpty()){
                 throw new NegocioException("Debe de colocar el nombre de un alimento para buscarlo.");
             }
-            return alimentosDAO.buscarAlimentoPorNombre(nombreAlimento);
+            Alimento alimentoEntidad = persistenciaFachada.buscarAlimentoPorNombre(nombreAlimento);
+            return adapter.adaptarAlimentosEntidad(alimentoEntidad);
         }catch(PersistenciaException ex){
             LOGGER.severe(ex.getMessage());
             throw new NegocioException("No se puedo buscar el alimento por nombre: "+ex.getMessage());
@@ -58,7 +67,8 @@ public class AlimentoBO implements IAlimentoBO{
             if(idAlimento == null || idAlimento.trim().isEmpty()){
                 throw new NegocioException("El id no puede estar vacía.");
             }
-            return alimentosDAO.consultarAlimentoPorID(idAlimento);
+            Alimento alimentoEntidad = persistenciaFachada.consultarAlimentoPorID(idAlimento);
+            return adapter.adaptarAlimentosEntidad(alimentoEntidad);
         }catch(PersistenciaException ex){
             LOGGER.severe(ex.getMessage());
             throw new NegocioException("No se pudo consultar el alimento por ID: "+ex.getMessage());

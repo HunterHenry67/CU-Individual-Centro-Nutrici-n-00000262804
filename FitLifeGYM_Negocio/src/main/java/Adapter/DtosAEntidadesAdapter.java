@@ -183,7 +183,7 @@ public class DtosAEntidadesAdapter {
         return new DietaDTO(dieta.getIdDieta(), dieta.getNombreDieta(), dieta.getFechaInicio(), dieta.getFechaFinal(), dieta.getIdPaciente(), dieta.getNombreNutriologo(), listaDiasDTO);          
     }
     
-    public static AlimentoDTO adaptarAlimentosEntidad(Alimento entidad){
+    public AlimentoDTO adaptarAlimentosEntidad(Alimento entidad){
         if(entidad == null){
             return null;
         }
@@ -194,7 +194,7 @@ public class DtosAEntidadesAdapter {
         return new AlimentoDTO(entidad.getIdAlimento(), entidad.getNombreAlimento(), entidad.getCantidad(), imagenDTO);
     }
     
-    public static Alimento adpatarAlimentoDTO(AlimentoDTO dto){
+    public Alimento adpatarAlimentoDTO(AlimentoDTO dto){
         if(dto == null){
             return null;
         }
@@ -204,7 +204,7 @@ public class DtosAEntidadesAdapter {
         return entidad;
     }
     
-    public static List<AlimentoDTO> adpatarAlimentosEntidad(List<Alimento> entidades){
+    public List<AlimentoDTO> adaptarAlimentosEntidad(List<Alimento> entidades){
         List<AlimentoDTO> dtos = new ArrayList<>();
         if(entidades != null){
             for(Alimento entidad: entidades){
