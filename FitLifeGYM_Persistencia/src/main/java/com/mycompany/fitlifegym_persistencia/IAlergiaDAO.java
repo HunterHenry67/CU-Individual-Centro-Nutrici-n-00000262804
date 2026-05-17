@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface IAlergiaDAO {
     public abstract List<Alergia> consultarAlergia() throws PersistenciaException;
+    public abstract Alergia consultarAlergiaPorID(String idAlergia) throws PersistenciaException;
 }

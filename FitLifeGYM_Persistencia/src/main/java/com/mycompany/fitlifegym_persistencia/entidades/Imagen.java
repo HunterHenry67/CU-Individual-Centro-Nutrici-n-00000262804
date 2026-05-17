@@ -9,5 +9,35 @@ package com.mycompany.fitlifegym_persistencia.entidades;
  * @author BALAMRUSH
  */
 public class Imagen {
+    private String idImagen;
+    private byte[] imagen;
+
+    public Imagen() {
+    }
+
+    public Imagen(String idImagen, byte[] imagen) {
+        this.idImagen = idImagen;
+        this.imagen = imagen;
+    }
+
+    public String getIdImagen() {
+        return idImagen;
+    }
+
+    public void setIdImagen(String idImagen) {
+        this.idImagen = idImagen;
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    
+
+    
     
 }

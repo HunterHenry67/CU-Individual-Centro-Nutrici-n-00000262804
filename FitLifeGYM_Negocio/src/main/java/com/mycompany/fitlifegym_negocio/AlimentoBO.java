@@ -4,8 +4,11 @@
  */
 package com.mycompany.fitlifegym_negocio;
 
+import com.mycompany.fitlifegym_dtos.AlimentoDTO;
 import com.mycompany.fitlifegym_persistencia.AlimentoDAO;
 import com.mycompany.fitlifegym_persistencia.IAlimentoDAO;
+import com.mycompany.fitlifegym_persistencia.IPersistenciaDAO;
+import com.mycompany.fitlifegym_persistencia.PersistenciaDAO;
 import com.mycompany.fitlifegym_persistencia.PersistenciaException;
 import com.mycompany.fitlifegym_persistencia.entidades.Alimento;
 import java.util.List;
@@ -19,17 +22,17 @@ public class AlimentoBO implements IAlimentoBO{
 
     private static final Logger LOGGER = Logger.getLogger(AlimentoBO.class.getName());
     
-    private final IAlimentoDAO alimentosDAO;
+    private final IPersistenciaDAO persistenciaFachada;
     
     public AlimentoBO(){
-        this.alimentosDAO = new AlimentoDAO();
+        this.persistenciaFachada = new PersistenciaDAO();
     }
 
     @Override
-    public List<Alimento> consultarAlimento() throws NegocioException {
+    public List<AlimentoDTO> consultarAlimento() throws NegocioException {
         try{
-            List<Alimento> alimentos = alimentosDAO.consultarAlimento();
-            return alimentos;
+            List<Alimento> alimentos = pers
+            return adaptarAlimentosEntidad(alimentos);
         }catch(PersistenciaException ex){
             LOGGER.severe(ex.getMessage());
             throw new NegocioException("No se pudo consultar los alimentos: "+ex.getMessage());
@@ -37,7 +40,7 @@ public class AlimentoBO implements IAlimentoBO{
     }
 
     @Override
-    public Alimento buscarAlimentoPorNombre(String nombreAlimento) throws NegocioException {
+    public AlimentoDTO buscarAlimentoPorNombre(String nombreAlimento) throws NegocioException {
         try{
             if(nombreAlimento == null || nombreAlimento.trim().isEmpty()){
                 throw new NegocioException("Debe de colocar el nombre de un alimento para buscarlo.");
@@ -50,7 +53,7 @@ public class AlimentoBO implements IAlimentoBO{
     }
 
     @Override
-    public Alimento consultarAlimentoPorID(String idAlimento) throws NegocioException {
+    public AlimentoDTO consultarAlimentoPorID(String idAlimento) throws NegocioException {
         try{
             if(idAlimento == null || idAlimento.trim().isEmpty()){
                 throw new NegocioException("El id no puede estar vacía.");

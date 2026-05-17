@@ -8,6 +8,7 @@ import com.mycompany.fitlifegym_dtos.AlimentoDTO;
 import com.mycompany.fitlifegym_dtos.DiaSemanaDTO;
 import com.mycompany.fitlifegym_dtos.DietaDTO;
 import com.mycompany.fitlifegym_dtos.EstadoDTO;
+import com.mycompany.fitlifegym_dtos.ImagenDTO;
 import com.mycompany.fitlifegym_dtos.NuevaMembresiaCompradaDTO;
 import com.mycompany.fitlifegym_dtos.NuevaMembresiaDTO;
 import com.mycompany.fitlifegym_dtos.NuevoClienteDTO;
@@ -180,6 +181,37 @@ public class DtosAEntidadesAdapter {
             
         }
         return new DietaDTO(dieta.getIdDieta(), dieta.getNombreDieta(), dieta.getFechaInicio(), dieta.getFechaFinal(), dieta.getIdPaciente(), dieta.getNombreNutriologo(), listaDiasDTO);          
+    }
+    
+    public static AlimentoDTO adaptarAlimentosEntidad(Alimento entidad){
+        if(entidad == null){
+            return null;
+        }
+        ImagenDTO imagenDTO = null;
+        if(entidad.getImagen() != null){
+            imagenDTO = new ImagenDTO(entidad.getImagen().getIdImagen(), entidad.getImagen().getImagen());
+        }
+        return new AlimentoDTO(entidad.getIdAlimento(), entidad.getNombreAlimento(), entidad.getCantidad(), imagenDTO);
+    }
+    
+    public static Alimento adpatarAlimentoDTO(AlimentoDTO dto){
+        if(dto == null){
+            return null;
+        }
+        Alimento entidad = new Alimento();
+        entidad.setIdAlimento(dto.idAlimento());
+        entidad.setNombreAlimento(dto.nombreAlimento());
+        return entidad;
+    }
+    
+    public static List<AlimentoDTO> adpatarAlimentosEntidad(List<Alimento> entidades){
+        List<AlimentoDTO> dtos = new ArrayList<>();
+        if(entidades != null){
+            for(Alimento entidad: entidades){
+                dtos.add(adaptarAlimentosEntidad(entidad));
+            }
+        }
+        return dtos;
     }
 
 }

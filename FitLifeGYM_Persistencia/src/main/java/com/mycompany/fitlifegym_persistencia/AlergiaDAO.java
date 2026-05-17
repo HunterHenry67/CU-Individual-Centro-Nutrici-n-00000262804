@@ -5,6 +5,7 @@
 package com.mycompany.fitlifegym_persistencia;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Filters;
 import com.mycompany.fitlifegym_persistencia.entidades.Alergia;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,16 @@ public class AlergiaDAO implements IAlergiaDAO{
         }catch(Exception ex){
             LOGGER.severe(ex.getMessage());
             throw new PersistenciaException("Error al consultar alergia: "+ex.getMessage());
+        }
+    }
+
+    @Override
+    public Alergia consultarAlergiaPorID(String idAlergia) throws PersistenciaException {
+        try{
+            return coleccionAlergia.find(Filters.eq("_id", idAlergia)).first();
+        }catch(Exception ex){
+            LOGGER.severe(ex.getMessage());
+            throw new PersistenciaException("Error al consultar la alergia por ID: "+ex.getMessage());
         }
     }
 
